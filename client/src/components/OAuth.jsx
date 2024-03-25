@@ -4,7 +4,7 @@ import { AiFillGoogleCircle } from 'react-icons/ai'
 import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth'
 import { app } from '../firebase';
 import { useDispatch } from 'react-redux'
-import { signInStart, signInSuccess } from "../redux/user/userSlice";
+import { signInSuccess } from "../redux/user/userSlice";
 import {useNavigate} from 'react-router-dom';
 
 export default function OAuth() {
@@ -16,7 +16,8 @@ export default function OAuth() {
         provider.setCustomParameters({ prompt: 'select_account' }); // when click the continue with google , it will always ask to choose which account
         try {
             const resultsFromGoogle = await signInWithPopup(auth, provider)
-            // console.log(resultsFromGoogle);
+            // console.log(resultsFromGoogle.user.photoURL);
+            
             const res = await fetch('/api/auth/google', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -26,6 +27,7 @@ export default function OAuth() {
                     googlePhotoUrl: resultsFromGoogle.user.photoURL,
                 }),
             })
+            
             const data = await res.json();
             if (res.ok) {
                 dispatch(signInSuccess(data));
