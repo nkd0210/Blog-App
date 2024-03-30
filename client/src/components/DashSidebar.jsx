@@ -1,6 +1,6 @@
 import React from 'react'
 import { Sidebar } from 'flowbite-react'
-import { HiUser, HiArrowSmRight, HiDocumentText, HiOutlineUserGroup } from 'react-icons/hi'
+import { HiUser, HiArrowSmRight, HiDocumentText, HiOutlineUserGroup, HiAnnotation } from 'react-icons/hi'
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
@@ -11,7 +11,7 @@ export default function DashSidebar() {
   const location = useLocation(); // give the access to the current URL location in the browser
   const [tab, setTab] = useState('profile');
   const dispatch = useDispatch();
-  const {currentUser} = useSelector((state) => state.user)
+  const { currentUser } = useSelector((state) => state.user)
 
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
@@ -42,11 +42,11 @@ export default function DashSidebar() {
       <Sidebar.Items>
         <Sidebar.ItemGroup className='flex flex-col gap-1'>
           <Link to='/dashboard?tab=profile'>
-            <Sidebar.Item 
-              active={tab === 'profile'} 
-              icon={HiUser} label={currentUser.isAdmin ? 'Admin' : 'User'} 
-              labelColor='dark' 
-              className='cursor-pointer' 
+            <Sidebar.Item
+              active={tab === 'profile'}
+              icon={HiUser} label={currentUser.isAdmin ? 'Admin' : 'User'}
+              labelColor='dark'
+              className='cursor-pointer'
               as='div'
             >
               Profile
@@ -61,15 +61,28 @@ export default function DashSidebar() {
               >Posts</Sidebar.Item>
             </Link>)
           }
-          {currentUser.isAdmin &&
-            (<Link to='/dashboard?tab=users'>
-              <Sidebar.Item
-                active={tab === 'users'}
-                icon={HiOutlineUserGroup}
-                as='div'
-              >Users</Sidebar.Item>
-            </Link>)
-          }
+          {currentUser.isAdmin && (
+            <>
+              <Link to='/dashboard?tab=users'>
+                <Sidebar.Item
+                  active={tab === 'users'}
+                  icon={HiOutlineUserGroup}
+                  as='div'
+                >
+                  Users
+                </Sidebar.Item>
+              </Link>
+              <Link to='/dashboard?tab=comments'>
+                <Sidebar.Item
+                  active={tab === 'comments'}
+                  icon={HiAnnotation}
+                  as='div'
+                >
+                  Comments
+                </Sidebar.Item>
+              </Link>
+            </>
+          )}
           <Sidebar.Item onClick={handleSignout} icon={HiArrowSmRight} className="cursor-pointer">
             Sign out
           </Sidebar.Item>

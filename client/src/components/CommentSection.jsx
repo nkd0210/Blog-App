@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Comment from "./Comment";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 
-export default function CommentSection({ postId }) {
+export default function CommentSection({ postId, postTitle }) {
     const { currentUser } = useSelector((state) => state.user);
     const [comment, setComment] = useState("");
     const [comments, setComments] = useState([]); // list of all comments
@@ -29,6 +29,7 @@ export default function CommentSection({ postId }) {
                     content: comment,
                     postId,
                     userId: currentUser._id,
+                    postTitle
                 }),
             });
             const data = await res.json();
