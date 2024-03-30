@@ -167,7 +167,7 @@ export default function CommentSection({ postId, postTitle }) {
                 </form>
             )}
             {comments.length === 0 ? (
-                <p className="text-sm my-5">No comments yet!</p>
+                <p className="text-sm text-gray-600 my-5">No comments yet!</p>
             ) : (
                 <>
                     <div className="text-sm my-5 flex items-center gap-1">
