@@ -61,7 +61,7 @@ export default function PostPage() {
         );
 
     return (
-        <main className='p-3 flex flex-col max-w-6xl mx-auto min-h-screen rounded-3xl bg-blue-100 dark:bg-red-100  ' >
+        <main className='p-3 flex flex-col max-w-6xl mx-auto min-h-screen rounded-3xl bg-gradient-to-r from-pink-200 to-blue-200 dark:from-orange-100 dark:to-purple-300' >
             <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl text-blue-500 dark:text-red-500'>
                 {post && post.title}
             </h1>
@@ -78,7 +78,7 @@ export default function PostPage() {
                 alt={post && post.title}
                 className='mt-10 p-3 max-h-[300px] w-full object-cover'
             />
-            <div className='flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-xs text-red-400 dark:text-blue-400'>
+            <div className='flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-md text-red-400 dark:text-blue-400'>
                 <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
                 <span className='italic'>
                     {post && (post.content.length / 1000).toFixed(0)} mins read
@@ -95,11 +95,11 @@ export default function PostPage() {
 
             <div className='flex flex-col justify-center items-center mb-5'>
                 <h1 className='text-2xl text-blue-600 dark:text-pink-600 mt-5'>Recent articles</h1>
-                <div className='flex flex-wrap gap-5 mt-5 justify-center'>
+                <div className='flex flex-wrap gap-5 mt-5 justify-center items-center mx-auto'>
                     {recentPosts && recentPosts.map((post) => <PostCard key={post._id} post={post} />)}
                 </div>
             </div>
         </main>
     )
 }
-// 8:12:33
+

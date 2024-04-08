@@ -38,7 +38,7 @@ export default function DashSidebar() {
   }
 
   return (
-    <Sidebar className='w-full md:w-56'>
+    <Sidebar className='w-full md:w-56 bg-pink-100 '>
       <Sidebar.Items>
         <Sidebar.ItemGroup className='flex flex-col gap-1'>
         {currentUser && currentUser.isAdmin && (
@@ -47,6 +47,7 @@ export default function DashSidebar() {
                 active={tab === 'dash' || !tab}
                 icon={HiChartPie}
                 as='div'
+                className="text-red-400 dark:text-purple-400"
               >
                 Dashboard
               </Sidebar.Item>
@@ -57,7 +58,7 @@ export default function DashSidebar() {
               active={tab === 'profile'}
               icon={HiUser} label={currentUser.isAdmin ? 'Admin' : 'User'}
               labelColor='dark'
-              className='cursor-pointer'
+              className='cursor-pointer text-red-400 dark:text-purple-400'
               as='div'
             >
               Profile
@@ -69,6 +70,8 @@ export default function DashSidebar() {
                 active={tab === 'posts'}
                 icon={HiDocumentText}
                 as='div'
+                className="text-red-400 dark:text-purple-400"
+
               >Posts</Sidebar.Item>
             </Link>)
           }
@@ -79,6 +82,8 @@ export default function DashSidebar() {
                   active={tab === 'users'}
                   icon={HiOutlineUserGroup}
                   as='div'
+                className="text-red-400 dark:text-purple-400"
+
                 >
                   Users
                 </Sidebar.Item>
@@ -88,13 +93,15 @@ export default function DashSidebar() {
                   active={tab === 'comments'}
                   icon={HiAnnotation}
                   as='div'
+                className="text-red-400 dark:text-purple-400"
+
                 >
                   Comments
                 </Sidebar.Item>
               </Link>
             </>
           )}
-          <Sidebar.Item onClick={handleSignout} icon={HiArrowSmRight} className="cursor-pointer">
+          <Sidebar.Item onClick={handleSignout} icon={HiArrowSmRight} className="cursor-pointer text-red-700 dark:text-red-400">
             Sign out
           </Sidebar.Item>
         </Sidebar.ItemGroup>

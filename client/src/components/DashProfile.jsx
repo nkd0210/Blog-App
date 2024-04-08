@@ -144,7 +144,7 @@ export default function DashProfile() {
 
   return (
     <div className='max-w-lg mx-auto p-3 w-full'>
-      <h1 className='my-7 text-center font-semibold text-3xl' style={{ color: 'lightcoral' }}>Profile</h1>
+      <h1 className='my-7 text-center font-semibold text-3xl text-orange-400 dark:text-purple-400' >Profile</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-5'>
         <input type='file' accept='image/*' onChange={handleImageChange} ref={filePickerRef} hidden />
         <div className=" relative w-32 h-32 self-center cursor-pointer shadow-md overflow-hidden rounded-full" onClick={() => filePickerRef.current.click()}>
