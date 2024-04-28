@@ -11,7 +11,7 @@ export default function Search() {
         category: 'uncategorized',
     });
 
-    console.log(sidebarData);
+    // console.log(sidebarData);
 
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -102,11 +102,12 @@ export default function Search() {
     }
 
     return (
-        <div className='flex flex-col md:flex-row'>
-            <div className='p-7 border-b md:border-r md:min-h-screen border-gray-200 bg-purple-100 dark:bg-slate-800 '>
-                <form className='flex flex-col gap-8' onSubmit={handleSubmit}>
+        <div className='flex flex-col md:flex-col bg-summer bg-cover dark:bg-none '>
+            {/* SEARCH BAR */}
+            <div className='p-7 border-b md:border-r border-gray-900 bg-purple-100 bg-woodDark bg-contain max-w-[900px] mx-auto my-[20px] rounded-[20px] shadow-lg shadow-gray-400/50  '>
+                <form className='flex flex-col lg:flex-row gap-8 mx-auto'>
                     <div className='flex items-center gap-2 w-full'>
-                        <label className='whitespace-nowrap font-semibold text-orange-400 dark:text-purple-500'>
+                        <label className='whitespace-nowrap font-semibold text-gray-300'>
                             Search Term:
                         </label>
                         <TextInput
@@ -115,23 +116,23 @@ export default function Search() {
                             type='text'
                             value={sidebarData.searchTerm}
                             onChange={handleChange}
-                            className='w-full'
+                            className='min-w-[200px]'
                         />
                     </div>
                     <div className='flex items-center gap-2 w-full'>
-                        <label className='font-semibold text-orange-400 dark:text-purple-500 '>Sort:</label>
+                        <label className='font-semibold text-gray-300 '>Sort:</label>
                         <Select className='w-full' onChange={handleChange} value={sidebarData.sort} id='sort'>
                             <option value='desc'>Latest</option>
                             <option value='asc'>Oldest</option>
                         </Select>
                     </div>
                     <div className='flex items-center gap-2'>
-                        <label className='font-semibold text-orange-400 dark:text-purple-500'>Category:</label>
+                        <label className='font-semibold text-gray-300'>Category:</label>
                         <Select
                             onChange={handleChange}
                             value={sidebarData.category}
                             id='category'
-                            className='w-full'
+                            className='min-w-[150px]'
                         >
                             <option value='uncategorized'>Uncategorized</option>
                             <option value='reactjs'>React.js</option>
@@ -143,14 +144,16 @@ export default function Search() {
 
                         </Select>
                     </div>
-                    <Button type='submit' gradientDuoTone='purpleToPink'>
+                    <div onClick={handleSubmit} type='submit' className='border p-[10px] min-w-[80px] text-center rounded-[10px] border-gray-900 bg-[#6e6b6e] hover:text-gray-800 cursor-pointer'>
                          Filters
-                    </Button>
+                    </div>
                 </form>
             </div>
-            <div className="w-full flex flex-col bg-gradient-to-r from-pink-200 to-blue-200 dark:from-orange-100 dark:to-purple-300">
-                <h1 className='text-3xl text-center font-semibold sm:border-b vorder-gray-500 p-5 text-orange-400 dark:text-purple-500 bg-green-200 dark:bg-blue-200'>Posts Results</h1>
-                <div className='p-7 flex flex-wrap gap-4 align-items-center text-center justify-center  '>
+
+            {/* DISPLAY */}
+            <div className="w-full flex flex-col  ">
+                <h1 className='text-3xl text-center font-semibold border text-orange-300 dark:text-indigo-300 border-cyan-400 dark:border-indigo-500 p-5 mx-[20px] sm:mx-[40px] rounded-t-[50px] shadow-lg  dark:shadow-lg dark:shadow-indigo-500/90 dark:bg-sky bg-cover'>Posts Results</h1>
+                <div className='flex flex-wrap justify-center align-items-center  gap-[30px] sm:gap-[50px] border mx-[20px] sm:mx-[40px] p-[30px] sm:p-[20px] rounded-b-[20px] border-cyan-200 dark:border-indigo-400 dark:shadow-lg dark:shadow-indigo-500/90  '>
                     {!loading && posts.length === 0 && (
                         <p className='text-xl text-gray-500'>No posts found.</p>
                     )}
@@ -161,7 +164,7 @@ export default function Search() {
                     {showMore && (
                         <button
                             onClick={handleShowMore}
-                            className='text-teal-500 text-lg hover:underline p-7 w-full'
+                            className='text-cyan-500 text-lg hover:underline p-7 w-full'
                         >
                             Show More
                         </button>

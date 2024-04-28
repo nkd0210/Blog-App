@@ -73,11 +73,13 @@ export default function PostPage() {
                     {post && post.category}
                 </Button>
             </Link>
-            <img
-                src={post && post.image}
-                alt={post && post.title}
-                className='mt-10 p-3 max-h-[300px] w-full object-cover'
-            />
+            <div className="w-full sm:h-[200px] lg:h-[400px] rounded-lg py-5 ">
+                <img
+                    src={post && post.image}
+                    alt={post && post.title}
+                    className='h-full w-full object-contain '
+                />
+            </div>
             <div className='flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-md text-red-400 dark:text-blue-400'>
                 <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
                 <span className='italic'>

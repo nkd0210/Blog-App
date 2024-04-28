@@ -1,32 +1,33 @@
 import { Button } from 'flowbite-react';
 import { FaGithub } from 'react-icons/fa';
+import { assets } from '../assets/img/assets';
 
 export default function CallToAction() {
     return (
-        <div className='flex flex-col sm:flex-row p-3 border border-teal-500 justify-center items-center rounded-tl-3xl rounded-br-3xl text-center'>
-            <div className=" justify-center flex flex-col">
-                <h2 className='text-2xl text-pink-400 dark:text-green-400'>
-                    You can check through my ecommerce website
+        <div className='flex flex-col sm:flex-row p-3 border border-cyan-500 shadow-cyan-500/50  dark:border-indigo-500 shadow-lg dark:shadow-indigo-500/90 justify-center items-center rounded-[20px] text-center'>
+            <div className=" justify-center flex flex-col  border-cyan-400 dark:border-indigo-400 p-[20px] rounded-[20px] border  ">
+                <h2 className='text-2xl text-orange-400 dark:text-purple-400 hidden lg:block '  >
+                    You can check through our ecommerce website
                 </h2>
-                <p className='text-gray-500 my-2'>
+                <p className=' text-gray-500 dark:text-white my-2'>
                     Live site
                 </p>
-                <Button gradientDuoTone='purpleToPink' className='rounded-tl-xl rounded-bl-none'>
-                    <a href="https://comfy-cloth.onrender.com/" target='_blank' rel='noopener noreferrer'>
-                        Cozy and Comfy
+                <Button gradientDuoTone='purpleToBlue' className='rounded-tl-xl rounded-bl-none'>
+                    <a href="http://localhost:5174/" target='_blank' rel='noopener noreferrer'>
+                        Kaydi FoodStore
                     </a>
                 </Button>
-                <p className='text-gray-500 my-2 '>
+                <p className='text-gray-500 dark:text-white p-[10px] '>
                     My github repository
                 </p>
-                <Button className='rounded-tl-xl rounded-bl-none bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ...'>
+                <Button className='rounded-tl-xl rounded-bl-none ' gradientDuoTone='purpleToPink'>
                     <a href="https://github.com/nkd0210/comfySloth" target='_blank' rel='noopener noreferrer'>
                         <FaGithub className='text-lg' />
                     </a>
                 </Button>
             </div>
-            <div className="p-7 ">
-                <img src="https://cdn.vietnambiz.vn/2019/8/2/impact-of-ecommerce-on-society-15647219830501355870318-crop-1564722020371805734630.png" />
+            <div className="max-w-[800px] p-[10px] ml-[20px] ">
+                <img src={assets.kaydifoodstore} className='w-full rounded-[20px]' />
             </div>
         </div>
     )

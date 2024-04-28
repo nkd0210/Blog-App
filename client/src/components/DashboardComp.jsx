@@ -69,7 +69,8 @@ export default function DashboardComp() {
     }, [currentUser]);
 
     return (
-        <div className="p-3 md:mx-auto">
+        <div className="p-3 md:mx-auto ">
+            {/* GENERAL VIEW */}
             <div className="flex-wrap flex gap-4 justify-center">
                 <div className="flex flex-col p-3 bg-pink-100 dark:bg-blue-300 gap-4 md:w-72 w-full rounded-md shadow-md">
                     <div className="flex justify-between">
@@ -122,8 +123,10 @@ export default function DashboardComp() {
                     </div>
                 </div>
             </div>
+
+            {/* DETAIL TABLE */}
             <div className="flex flex-wrap gap-5 py-3 mx-auto justify-center">
-                <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800">
+                <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md bg-white dark:bg-gray-800">
                     <div className="flex justify-between  p-3 text-sm font-semibold">
                         <h1 className="text-center p-2">Recent users</h1>
                         <Button outline gradientDuoTone="purpleToPink">
@@ -152,7 +155,7 @@ export default function DashboardComp() {
                             ))}
                     </Table>
                 </div>
-                <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800">
+                <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md bg-white dark:bg-gray-800">
                     <div className="flex justify-between  p-3 text-sm font-semibold">
                         <h1 className="text-center p-2">Recent comments</h1>
                         <Button outline gradientDuoTone="purpleToPink">
@@ -177,7 +180,7 @@ export default function DashboardComp() {
                             ))}
                     </Table>
                 </div>
-                <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800">
+                <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md bg-white dark:bg-gray-800">
                     <div className="flex justify-between  p-3 text-sm font-semibold">
                         <h1 className="text-center p-2">Recent posts</h1>
                         <Button outline gradientDuoTone="purpleToPink">

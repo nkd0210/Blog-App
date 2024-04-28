@@ -1,12 +1,12 @@
 export default function About() {
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-200 to-blue-200 dark:from-orange-100 dark:to-purple-300'>
+    <div className='min-h-screen lg:min-h-[700px] flex items-center justify-center bg-pool dark:bg-mystery bg-cover bg-center '>
       <div className='max-w-2xl mx-auto p-3 text-center'>
-        <div>
-          <h1 className='text-3xl font font-semibold text-center my-7 text-blue-500 dark:text-purple-500'>
-            About Kaydi' Blog
+        <div className="border p-[20px] rounded-[20px] border-cyan-400 dark:border-indigo-400 shadow-lg shadow-cyan-500/90 dark:shadow-indigo-500/90">
+          <h1 className='text-3xl font font-semibold text-center text-orange-400 dark:text-purple-400'>
+            About Kaydi's Blog
           </h1>
-          <div className='text-md text-gray-600 flex flex-col gap-6'>
+          <div className='text-lg text-gray-900 dark:text-white flex flex-col gap-6 pt-[20px]'>
             <p>
               Welcome to Kaydi's Blog! This blog was created by Nguyễn Kim Dũng
               as a project to share my thoughts and ideas with the

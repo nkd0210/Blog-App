@@ -80,6 +80,7 @@ export default function DashPosts() {
           <Table hoverable className="shadow-md">
             <Table.Head>
               <Table.HeadCell>Date updated</Table.HeadCell>
+              <Table.HeadCell>Post ID</Table.HeadCell>
               <Table.HeadCell>Post image</Table.HeadCell>
               <Table.HeadCell>Post title</Table.HeadCell>
               <Table.HeadCell>Category</Table.HeadCell>
@@ -93,11 +94,12 @@ export default function DashPosts() {
                 <Table.Body className="divide-y" key={post._id}>
                   <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                     <Table.Cell>{new Date(post.updatedAt).toLocaleDateString()}</Table.Cell>
+                    <Table.Cell>{post._id}</Table.Cell>
                     <Table.Cell>
                       <Link to={`/post/${post.slug}`}>
                         <img src={post.image} alt={post.title} className="w-20 h-20 object-cover bg-gray-500" />
                       </Link>
-                    </Table.Cell>
+                    </Table.Cell>                   
                     <Table.Cell>
                       <Link className="font-medium text-blue-400 dark:text-pink-400" to={`/post/${post.slug}`}>{post.title}</Link>
                     </Table.Cell>

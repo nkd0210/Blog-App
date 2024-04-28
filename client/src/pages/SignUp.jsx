@@ -49,7 +49,7 @@ export default function SignUp() {
           <Link to="/" className='font-bold dark:text-white text-4xl'>
             <span className='px-2 py-1 bg-gradient-to-r from-indigo-400 via-slate-400-500 to-pink-500 rounded-lg text-white'>Kaydi's</span>Blog
           </Link>
-          <p className="text-sm mt-5">This is our group project. You can sign up with your email and password or with Google</p>
+          <p className="text-sm mt-5">Welcome to my Blog. You can sign up with your email and password or with Google</p>
         </div>
         {/* right */}
         <div className="flex-1">

@@ -41,14 +41,14 @@ export default function SignIn() {
   }
 
   return (
-    <div className="min-h-screen mt-20" >
-      <div className="flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5">
+    <div className="min-h-screen mt-20 " >
+      <div className="flex p-[20px] max-w-[900px] lg:min-h-[400px] mx-auto  flex-col md:flex-row md:items-center gap-5 border rounded-[10px] shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-indigo-500/90 bg-summer dark:bg-sky bg-cover ">
         {/* left */}
         <div className="flex-1">
           <Link to="/" className='font-bold dark:text-white text-4xl'>
             <span className='px-2 py-1 bg-gradient-to-r from-indigo-400 via-slate-400-500 to-pink-500 rounded-lg text-white'>Kaydi's</span>Blog
           </Link>
-          <p className="text-sm mt-5">This is our group project. You can sign in with your email and password or with Google</p>
+          <p className="text-sm mt-5">Welcome to my Blog. You can sign in with your email and password or with Google</p>
         </div>
         {/* right */}
         <div className="flex-1">

@@ -79,6 +79,7 @@ export default function DashUsers() {
           <Table hoverable className="shadow-md">
             <Table.Head>
               <Table.HeadCell>Date created</Table.HeadCell>
+              <Table.HeadCell>User ID</Table.HeadCell>
               <Table.HeadCell>User image</Table.HeadCell>
               <Table.HeadCell>Username</Table.HeadCell>
               <Table.HeadCell>Email</Table.HeadCell>
@@ -91,6 +92,9 @@ export default function DashUsers() {
                 <Table.Body className="divide-y" key={user._id}>
                   <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                     <Table.Cell>{new Date(user.createdAt).toLocaleDateString()}</Table.Cell>
+                    <Table.Cell>
+                      {user._id}
+                    </Table.Cell>
                     <Table.Cell>      
                         <img src={user.profilePicture} alt={user.username} className="w-10 h-10 object-cover rounded-full bg-gray-500" />
                     </Table.Cell>

@@ -6,7 +6,23 @@ export default {
     "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "sky": "url(/sky.jpeg)",
+        "universe": "url(/universe.jpg)",
+        "woodDark": "url(/wood.avif)",
+        "wood1": "url(/wood1.jpg)",
+        "nightsky": "url(/nightsky.avif)",
+        "sea": "url(/sea.jpg)",
+        "summer": "url(/summer.jpg)",
+        "pool": "url(/pool.jpg)",
+        "mystery": "url(/mystery.jpg)",
+        "summerBeach": "url(/summerBeach.jpg)",
+        "curve": "url(/curve.jpg)",
+        "summerBeach2": "url(/summerBeach2.jpg)",
+
+      }
+    },
   },
   plugins: [
     require("flowbite/plugin"),

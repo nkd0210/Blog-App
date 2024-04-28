@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { toggleTheme } from '../redux/theme/themeSlice'
 import { signoutSuccess } from '../redux/user/userSlice';
 import { useState, useEffect } from 'react'
+import { FaBlog } from "react-icons/fa";
 
 export default function Header() {
   const path = useLocation().pathname;
@@ -56,9 +57,10 @@ export default function Header() {
 
 
   return (
-    <Navbar className='border-b-2'>
+    <Navbar className='border-b-2 bg-blue-100 '>
       <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
-        <span className='px-2 py-1 bg-gradient-to-r from-indigo-400 via-slate-400-500 to-pink-500 rounded-lg text-white'>Kaydi's</span>Blog
+        <span className='px-2 py-1 bg-gradient-to-r from-indigo-400 via-slate-400-500 to-pink-500 rounded-lg text-red-300'>Kaydi's</span> 
+        <span className='ml-[5px] text-purple-400'>Stories</span>
       </Link>
       <form onSubmit={handleSubmit}>
         <TextInput
@@ -109,13 +111,23 @@ export default function Header() {
       </div>
       <Navbar.Collapse>
         <Navbar.Link active={path === '/'} as={'div'}>
-          <Link to="/">Home</Link>
+          <Link to="/">
+            <p className='text-[18px] hover:text-cyan-500  dark:hover:text-purple-400 hover:cursor-pointer sm:hover:scale-125 transform transition-transform  '>Home</p>
+          </Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/about'} as={'div'}>
-          <Link to="/about">About</Link>
+          <Link to="/about">
+            <p className='text-[18px]  hover:text-cyan-500  dark:hover:text-purple-400 hover:cursor-pointer sm:hover:scale-125 transform transition-transform '>
+              About
+            </p>
+          </Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/projects'} as={'div'}>
-          <Link to="/projects">Projects</Link>
+          <Link to="/projects">
+            <p className='text-[18px]  hover:text-cyan-500  dark:hover:text-purple-400 hover:cursor-pointer sm:hover:scale-125 transform transition-transform '>
+              Projects
+            </p>
+          </Link>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
