@@ -53,10 +53,6 @@ export default function Header() {
     navigate(`/search?${searchQuery}`);
   }
 
-
-
-
-
   return (
     <Navbar className='border-b-2 border-gray-900 bg-blue-100 bg-woodDark bg-contain'>
       <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>

@@ -11,7 +11,7 @@ export default function Search() {
         category: 'uncategorized',
     });
 
-    // console.log(sidebarData);
+    console.log(sidebarData);
 
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -24,7 +24,9 @@ export default function Search() {
         const searchTermFromUrl = urlParams.get('searchTerm');
         const sortFromUrl = urlParams.get('sort');
         const categoryFromUrl = urlParams.get('category');
-        // console.log(urlParams, searchTermFromUrl, sortFromUrl, categoryFromUrl);
+
+        // console.log(urlParams);
+
         if (searchTermFromUrl || sortFromUrl || categoryFromUrl) {
             setSidebarData({
                 ...sidebarData,
@@ -122,7 +124,7 @@ export default function Search() {
                     <div className='flex items-center gap-2 w-full'>
                         <label className='font-semibold text-gray-300 '>Sort:</label>
                         <Select className='w-full' onChange={handleChange} value={sidebarData.sort} id='sort'>
-                            <option value='desc'>Latest</option>
+                            <option value='desc'>Newest</option>
                             <option value='asc'>Oldest</option>
                         </Select>
                     </div>
@@ -144,7 +146,7 @@ export default function Search() {
 
                         </Select>
                     </div>
-                    <div onClick={handleSubmit} type='submit' className='border p-[10px] min-w-[80px] text-center rounded-[10px] border-gray-900 bg-[#6e6b6e] hover:text-gray-800 cursor-pointer'>
+                    <div onClick={handleSubmit} type='submit' className='border p-[10px] min-w-[80px] text-center text-[#fff] rounded-[10px] border-gray-900 bg-[#6e6b6e] hover:text-gray-800 cursor-pointer'>
                          Filters
                     </div>
                 </form>
@@ -174,3 +176,7 @@ export default function Search() {
         </div>
     )
 }
+
+
+
+

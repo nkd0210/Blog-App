@@ -14,6 +14,7 @@ export default function Home() {
     };
     fetchPosts();
   }, []);
+  
   return (
     <div className=' bg-summerBeach dark:bg-mystery bg-contain p-[5px] md:p-[12px] lg:py-[20px] lg:px-0'>
       {/* HERO */}
