@@ -83,8 +83,8 @@ export default function CreatePost() {
 
 
   return (
-    <div className='p-3 max-w-3xl mx-auto min-h-screen'>
-      <h1 className='text-center text-3xl my-7 font-semibold text-red-400 dark:text-blue-400'>Create a post</h1>
+    <div className='max-w-3xl mx-auto min-h-screen border my-[20px] shadow-lg border-cyan-200 shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90 rounded-t-[50px] p-[20px] '>
+      <h1 className='text-center text-3xl my-7 font-semibold text-red-400 dark:text-indigo-400 '>Create a post</h1>
       <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput 

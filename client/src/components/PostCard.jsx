@@ -6,7 +6,7 @@ export default function PostCard({ post }) {
   const navigate = useNavigate();
 
   return (
-    <div className='group relative w-full bg-blue-100 dark:bg-purple-200 border border-cyan-300 dark:border-indigo-400 hover:border-2 h-[400px] overflow-hidden rounded-lg sm:w-[430px] transition-all shadow-lg shadow-cyan-300/50 dark:shadow-indigo-500/90'>
+    <div className='group relative w-full bg-blue-100 dark:bg-purple-200 border border-cyan-400 dark:border-indigo-400 hover:border-2 h-[400px] overflow-hidden rounded-lg sm:w-[430px] transition-all shadow-lg shadow-cyan-400/50 dark:shadow-indigo-500/90'>
       <Link to={`/post/${post.slug}`}>
         <img
           src={post.image}
@@ -19,7 +19,7 @@ export default function PostCard({ post }) {
         <span className='italic text-sm text-purple-500 dark:text-gray-400'>{post.category}</span>
         <Link
           to={`/post/${post.slug}`}
-          className='z-10 group-hover:bottom-0 absolute bottom-[-200px] left-0 right-0 border border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white transition-all duration-300 text-center py-2 rounded-md !rounded-tl-none m-2'
+          className='z-10 group-hover:bottom-0 absolute bottom-[-200px] left-0 right-0 border border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white dark:border-indigo-500 dark:text-indigo-500 dark:hover:bg-indigo-500 dark:hover:text-white transition-all duration-300 text-center py-2 rounded-md !rounded-tl-none m-2'
         >
           Read article
         </Link>

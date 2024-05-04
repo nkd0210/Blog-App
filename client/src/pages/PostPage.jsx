@@ -60,9 +60,10 @@ export default function PostPage() {
             </div>
         );
 
+        //bg-gradient-to-r from-pink-200 to-blue-200 dark:from-orange-100 dark:to-purple-300
     return (
-        <main className='p-3 flex flex-col max-w-6xl mx-auto min-h-screen rounded-3xl bg-gradient-to-r from-pink-200 to-blue-200 dark:from-orange-100 dark:to-purple-300' >
-            <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl text-blue-500 dark:text-red-500'>
+        <main className='p-3 flex flex-col max-w-6xl mx-auto my-3 min-h-screen rounded-[20px] bg-summerBeach dark:bg-nightsky bg-center bg-contain shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-indigo-500/90' >
+            <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl text-cyan-500 dark:text-purple-500'>
                 {post && post.title}
             </h1>
             <Link
@@ -87,16 +88,16 @@ export default function PostPage() {
                 </span>
             </div>
             <div
-                className='p-3 max-w-2xl mx-auto w-full post-content'
+                className='p-3 max-w-2xl mx-auto w-full post-content '
                 dangerouslySetInnerHTML={{ __html: post && post.content }}
             ></div>
-            <div className='max-w-4xl mx-auto w-full'>
+            <div className=' mx-auto w-full'>
                 <CallToAction />
             </div>
             <CommentSection postId={post._id} postTitle={post.title} />
 
-            <div className='flex flex-col justify-center items-center mb-5'>
-                <h1 className='text-2xl text-blue-600 dark:text-pink-600 mt-5'>Recent articles</h1>
+            <div className='flex flex-col justify-center items-center my-5'>
+                <h1 className='text-2xl text-cyan-600 dark:text-indigo-500 mt-[20px]'>Recent articles</h1>
                 <div className='flex flex-wrap gap-5 mt-5 justify-center items-center mx-auto'>
                     {recentPosts && recentPosts.map((post) => <PostCard key={post._id} post={post} />)}
                 </div>

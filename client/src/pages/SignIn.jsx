@@ -41,24 +41,24 @@ export default function SignIn() {
   }
 
   return (
-    <div className="min-h-screen mt-20 " >
+    <div className="max-h-screen my-20  " >
       <div className="flex p-[20px] max-w-[900px] lg:min-h-[400px] mx-auto  flex-col md:flex-row md:items-center gap-5 border rounded-[10px] shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-indigo-500/90 bg-summer dark:bg-sky bg-cover ">
         {/* left */}
         <div className="flex-1">
-          <Link to="/" className='font-bold dark:text-white text-4xl'>
-            <span className='px-2 py-1 bg-gradient-to-r from-indigo-400 via-slate-400-500 to-pink-500 rounded-lg text-white'>Kaydi's</span>Blog
+          <Link to="/" className='font-bold text-cyan-200 dark:text-white text-4xl'>
+            <span className='px-2 py-1 bg-gradient-to-r from-indigo-400 via-slate-400-500 to-pink-500 rounded-lg text-white'>Kaydi's</span> Blog
           </Link>
-          <p className="text-sm mt-5">Welcome to my Blog. You can sign in with your email and password or with Google</p>
+          <p className="text-sm mt-5 text-white">Welcome to my Blog. You can sign in with your email and password or with Google</p>
         </div>
         {/* right */}
         <div className="flex-1">
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <form className="flex flex-col gap-4 " onSubmit={handleSubmit}>
             <div>
-              <Label value='Your email' />
+              <Label value='Your email' className="text-white" />
               <TextInput type='email' placeholder="name@gmail.com" id='email' onChange={handleChange} />
             </div>
             <div>
-              <Label value='Your password' />
+              <Label value='Your password' className="text-white" />
               <TextInput type='password' placeholder="Password" id='password' onChange={handleChange} />
             </div>
             <Button gradientDuoTone='purpleToPink' type='submit'>
@@ -74,7 +74,7 @@ export default function SignIn() {
           </form>
           <div className="flex gap-2 text-sm mt-5">
             <span>Don't have any account ? </span>
-            <Link to='/sign-up' className="text-blue-600">Sign Up</Link>
+            <Link to='/sign-up' className="text-cyan-500">Sign Up</Link>
           </div>
           {
             errorMessage && (

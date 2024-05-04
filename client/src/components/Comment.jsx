@@ -54,7 +54,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
   };
 
     return (
-        <div className='flex p-4 border-b dark:border-gray-600 text-sm'>
+        <div className='flex p-4 border-b border-black dark:border-gray-400 text-sm'>
             <div className='flex-shrink-0 mr-3'>
                 <img
                     className='w-10 h-10 rounded-full bg-gray-200'
@@ -64,11 +64,11 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
             </div>
             <div className='flex-1'>
                 {/* ten nguoi dung + thoi gian */}
-                <div className='flex items-center mb-1'>
+                <div className='flex items-center mb-[6px]'>
                     <span className='font-bold mr-1 text-xs truncate text-blue-500 dark:text-pink-500'>
                         {user ? `@${user.username}` : 'anonymous user'}
                     </span>
-                    <span className='text-gray-500 text-xs'>
+                    <span className='text-black dark:text-[#666] text-[14px]'>
                         {moment(comment.createdAt).fromNow()}
                     </span>
                 </div>
@@ -102,7 +102,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                     </>
                 ) : (
                     <>
-                        <p className='text-gray-500 pb-2'>{comment.content}</p>
+                        <p className='text-black dark:text-white pb-2'>{comment.content}</p>
                         <div className='flex items-center pt-2 text-xs border-t dark:border-gray-700 max-w-fit gap-2'>
                             <button
                                 type='button'

@@ -13,6 +13,7 @@ export default {
         "woodDark": "url(/wood.avif)",
         "wood1": "url(/wood1.jpg)",
         "nightsky": "url(/nightsky.avif)",
+        "night": "url(/night.webp)",
         "sea": "url(/sea.jpg)",
         "summer": "url(/summer.jpg)",
         "pool": "url(/pool.jpg)",
@@ -20,7 +21,8 @@ export default {
         "summerBeach": "url(/summerBeach.jpg)",
         "curve": "url(/curve.jpg)",
         "summerBeach2": "url(/summerBeach2.jpg)",
-
+        "navbarWood": "url(/dark_wood.jpg)",
+        "moon": "url(/moon.jpg)",
       }
     },
   },

@@ -5,12 +5,13 @@ import { BsFacebook, BsInstagram, BsTwitter, BsDiscord} from 'react-icons/bs'
 
 export default function FooterCom() {
     return (
-        <Footer container className='border border-gray-900'>
+        <Footer container className='border border-gray-900 bg-woodDark bg-cover'>
             <div className="w-full max-w-7xl mx-auto">
                 <div className="grid w-full justify-between sm:flex md:grid-cols-1 ">
                     <div className="mt-5">
                         <Link to="/" className='self-center whitespace-nowrap text-lg sm:text-xl font-semibold dark:text-white'>
-                            <span className='px-2 py-1 bg-gradient-to-r from-indigo-400 via-slate-400-500 to-pink-500 rounded-lg text-white'>Kaydi's</span>Blog
+                            <span className='px-2 py-1 bg-gradient-to-r from-indigo-400 via-slate-400-500 to-pink-500 rounded-lg text-white'>Kaydi's</span>
+                            <span className='text-cyan-200 dark:text-indigo-400'> Stories</span>
                         </Link>
                     </div>
                     <div className="grid grid-cols-2 gap-3 mt-4 sm:grid-cols-3 sm:gap-6">
@@ -18,10 +19,14 @@ export default function FooterCom() {
                             <Footer.Title title='about' />
                             <Footer.LinkGroup col>
                             <Footer.Link href="https://comfy-cloth.onrender.com/" target='_blank' rel='noopener noreferrer'>
-                                Cozy and comfy
+                                <span className='border-none hover:border-none cursor-pointer hover:text-gray-400'>
+                                    Cozy and comfy
+                                </span>
                             </Footer.Link>
                             <Footer.Link href="/about" target='_blank' rel='noopener noreferrer'>
-                                Kaydi's Blog
+                                <span className='border-none hover:border-none cursor-pointer hover:text-gray-400'>
+                                    Kaydi's Stories
+                                </span>
                             </Footer.Link>
                             </Footer.LinkGroup>
                         </div>
@@ -29,10 +34,10 @@ export default function FooterCom() {
                             <Footer.Title title='Follow us' />
                             <Footer.LinkGroup col>
                             <Footer.Link href="https://github.com/nkd0210" target='_blank' rel='noopener noreferrer'>
-                                Github
+                                <span className='border-none hover:border-none cursor-pointer hover:text-gray-400'>Github</span>
                             </Footer.Link>
                             <Footer.Link href="#">
-                                Facebook
+                                <span className='border-none hover:border-none cursor-pointer hover:text-gray-400'>Facebook</span>
                             </Footer.Link>
                             </Footer.LinkGroup>
                         </div>
@@ -40,17 +45,23 @@ export default function FooterCom() {
                             <Footer.Title title='Legal' />
                             <Footer.LinkGroup col>
                             <Footer.Link href="#">
-                                Privacy Policy
+                                <span className='border-none hover:border-none cursor-pointer hover:text-gray-400'>
+                                    Privacy Policy
+                                </span>
                             </Footer.Link>
                             <Footer.Link href="#">
-                                Terms & Conditions
+                                <span className='border-none hover:border-none cursor-pointer hover:text-gray-400'>
+                                    Terms & Conditions
+                                </span>
                             </Footer.Link>
 
                             </Footer.LinkGroup>
                         </div>
                     </div>
                 </div>
+
                 <Footer.Divider />
+
                 <div className="w-full sm:flex sm:item-center sm:justify-between">
                     <Footer.Copyright href="#" by="Kaydi's Blog" year={new Date().getFullYear()}/>
                     <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
@@ -58,7 +69,6 @@ export default function FooterCom() {
                         <Footer.Icon href="#" icon={BsInstagram}></Footer.Icon>
                         <Footer.Icon href="#" icon={BsTwitter}></Footer.Icon>
                         <Footer.Icon href="#" icon={BsDiscord}></Footer.Icon>
-
                     </div>
                 </div>
             </div>

@@ -115,10 +115,10 @@ export default function CommentSection({ postId, postTitle }) {
     }
 
     return (
-        <div className="max-w-2xl mx-auto w-full p-3">
+        <div className="max-w-2xl mx-auto w-full p-3 border mt-[20px] rounded-[20px] border-cyan-400 shadow-cyan-500/50 dark:border-indigo-400 shadow-lg dark:shadow-indigo-500/90">
             {currentUser ? (
-                <div className="flex items-center gap-1 my-5 text-gray-500 text-sm">
-                    <p>Signed in as :</p>
+                <div className="flex items-center gap-1 my-5 text-black text-[16px]">
+                    <p className="pr-[10px]">Signed in as :</p>
                     <img
                         className="h-5 w-5 mr-1 object-cover rounded-full"
                         src={currentUser.profilePicture}
@@ -126,13 +126,13 @@ export default function CommentSection({ postId, postTitle }) {
                     />
                     <Link
                         to={"/dashboard?tab=profile"}
-                        className="text-xs text-cyan-600 hover:underline"
+                        className="text-[14px] text-cyan-600 hover:underline"
                     >
                         @{currentUser.username}
                     </Link>
                 </div>
             ) : (
-                <div className="text-sm text-teal-500 my-5 flex gap-1">
+                <div className="text-[16px] dark:text-cyan-500 my-5 flex gap-1">
                     You must be signed in to comment.
                     <Link className="text-blue-500 hover:underline" to={"/sign-in"}>
                         Sign In
@@ -167,12 +167,12 @@ export default function CommentSection({ postId, postTitle }) {
                 </form>
             )}
             {comments.length === 0 ? (
-                <p className="text-sm text-gray-600 my-5">No comments yet!</p>
+                <p className="text-[16px] text-gray-600 my-5">No comments yet!</p>
             ) : (
                 <>
                     <div className="text-sm my-5 flex items-center gap-1">
-                        <p className="dark:text-gray-600">Comments</p>
-                        <div className="border border-pink-400 dark:border-blue-400 py-1 px-2 rounded-full dark:text-gray-600">
+                        <p className="dark:text-[#fff]">Comments</p>
+                        <div className="border border-cyan-400 dark:border-indigo-400 py-1 px-2 rounded-full dark:text-indigo-400">
                             <p>{comments.length}</p>
                         </div>
                     </div>

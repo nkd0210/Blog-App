@@ -71,8 +71,8 @@ export default function DashboardComp() {
     return (
         <div className="p-3 md:mx-auto ">
             {/* GENERAL VIEW */}
-            <div className="flex-wrap flex gap-4 justify-center">
-                <div className="flex flex-col p-3 bg-pink-100 dark:bg-blue-300 gap-4 md:w-72 w-full rounded-md shadow-md">
+            <div className="flex-wrap flex gap-4 justify-center border shadow-lg border-cyan-200 shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90 rounded-t-[50px] p-[20px] bg-summerBeach2 bg-cover dark:bg-sky ">
+                <div className="flex flex-col p-3 bg-blue-300 dark:bg-indigo-300 gap-4 md:w-72 w-full rounded-md shadow-md">
                     <div className="flex justify-between">
                         <div className="">
                             <h3 className="text-blue-500 dark:text-pink-500 text-md uppercase">Total Users</h3>
@@ -88,7 +88,7 @@ export default function DashboardComp() {
                         <div className="text-gray-500">Last month</div>
                     </div>
                 </div>
-                <div className="flex flex-col p-3 bg-pink-100 dark:bg-blue-300 gap-4 md:w-72 w-full rounded-md shadow-md">
+                <div className="flex flex-col p-3 bg-blue-300 dark:bg-indigo-300 gap-4 md:w-72 w-full rounded-md shadow-md">
                     <div className="flex justify-between">
                         <div className="">
                             <h3 className="text-blue-500 dark:text-pink-500  text-md uppercase">
@@ -106,7 +106,7 @@ export default function DashboardComp() {
                         <div className="text-gray-500">Last month</div>
                     </div>
                 </div>
-                <div className="flex flex-col p-3 bg-pink-100 dark:bg-blue-300 gap-4 md:w-72 w-full rounded-md shadow-md">
+                <div className="flex flex-col p-3 bg-blue-300 dark:bg-indigo-300 gap-4 md:w-72 w-full rounded-md shadow-md">
                     <div className="flex justify-between">
                         <div className="">
                             <h3 className="text-blue-500 dark:text-pink-500  text-md uppercase">Total Posts</h3>
@@ -125,7 +125,7 @@ export default function DashboardComp() {
             </div>
 
             {/* DETAIL TABLE */}
-            <div className="flex flex-wrap gap-5 py-3 mx-auto justify-center">
+            <div className="flex flex-wrap gap-5 py-3 mx-auto justify-center border border-t-0 border-cyan-200 shadow-lg shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90 rounded-b-[50px]">
                 <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md bg-white dark:bg-gray-800">
                     <div className="flex justify-between  p-3 text-sm font-semibold">
                         <h1 className="text-center p-2">Recent users</h1>

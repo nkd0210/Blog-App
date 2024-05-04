@@ -104,7 +104,7 @@ export default function Search() {
     return (
         <div className='flex flex-col md:flex-col bg-summer bg-cover dark:bg-none '>
             {/* SEARCH BAR */}
-            <div className='p-7 border-b md:border-r border-gray-900 bg-purple-100 bg-woodDark bg-contain max-w-[900px] mx-auto my-[20px] rounded-[20px] shadow-lg shadow-gray-400/50  '>
+            <div className='p-7 border-b md:border-r bg-purple-100 bg-navbarWood bg-contain max-w-[900px] mx-auto my-[20px] rounded-[20px] shadow-lg border-cyan-200 shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90  '>
                 <form className='flex flex-col lg:flex-row gap-8 mx-auto'>
                     <div className='flex items-center gap-2 w-full'>
                         <label className='whitespace-nowrap font-semibold text-gray-300'>
@@ -153,7 +153,7 @@ export default function Search() {
             {/* DISPLAY */}
             <div className="w-full flex flex-col  ">
                 <h1 className='text-3xl text-center font-semibold border text-orange-300 dark:text-indigo-300 border-cyan-400 dark:border-indigo-500 p-5 mx-[20px] sm:mx-[40px] rounded-t-[50px] shadow-lg  dark:shadow-lg dark:shadow-indigo-500/90 dark:bg-sky bg-cover'>Posts Results</h1>
-                <div className='flex flex-wrap justify-center align-items-center  gap-[30px] sm:gap-[50px] border mx-[20px] sm:mx-[40px] p-[30px] sm:p-[20px] rounded-b-[20px] border-cyan-200 dark:border-indigo-400 dark:shadow-lg dark:shadow-indigo-500/90  '>
+                <div className='flex flex-wrap justify-center align-items-center  gap-[30px] sm:gap-[50px] border mx-[20px] sm:mx-[40px] p-[30px] sm:p-[20px] rounded-b-[20px] border-cyan-200 dark:border-indigo-400 dark:shadow-lg dark:shadow-indigo-500/90 dark:bg-mystery  '>
                     {!loading && posts.length === 0 && (
                         <p className='text-xl text-gray-500'>No posts found.</p>
                     )}
