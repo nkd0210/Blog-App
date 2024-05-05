@@ -14,43 +14,43 @@ export default function FooterCom() {
                             <span className='text-cyan-200 dark:text-indigo-400'> Stories</span>
                         </Link>
                     </div>
-                    <div className="grid grid-cols-2 gap-3 mt-4 sm:grid-cols-3 sm:gap-6">
+                    <div className="grid grid-cols-2 gap-3 mt-4 sm:grid-cols-3 sm:gap-6 ">
                         <div>
-                            <Footer.Title title='about' />
+                            <Footer.Title title='about' className='text-white' />
                             <Footer.LinkGroup col>
                             <Footer.Link href="https://comfy-cloth.onrender.com/" target='_blank' rel='noopener noreferrer'>
-                                <span className='border-none hover:border-none cursor-pointer hover:text-gray-400'>
+                                <span className='border-none hover:border-none cursor-pointer text-white hover:text-gray-400'>
                                     Cozy and comfy
                                 </span>
                             </Footer.Link>
                             <Footer.Link href="/about" target='_blank' rel='noopener noreferrer'>
-                                <span className='border-none hover:border-none cursor-pointer hover:text-gray-400'>
+                                <span className='border-none hover:border-none cursor-pointer text-white hover:text-gray-400'>
                                     Kaydi's Stories
                                 </span>
                             </Footer.Link>
                             </Footer.LinkGroup>
                         </div>
                         <div>
-                            <Footer.Title title='Follow us' />
+                            <Footer.Title title='Follow us' className='text-white' />
                             <Footer.LinkGroup col>
                             <Footer.Link href="https://github.com/nkd0210" target='_blank' rel='noopener noreferrer'>
-                                <span className='border-none hover:border-none cursor-pointer hover:text-gray-400'>Github</span>
+                                <span className='border-none hover:border-none cursor-pointer text-white hover:text-gray-400'>Github</span>
                             </Footer.Link>
                             <Footer.Link href="#">
-                                <span className='border-none hover:border-none cursor-pointer hover:text-gray-400'>Facebook</span>
+                                <span className='border-none hover:border-none cursor-pointer text-white hover:text-gray-400'>Facebook</span>
                             </Footer.Link>
                             </Footer.LinkGroup>
                         </div>
                         <div>
-                            <Footer.Title title='Legal' />
+                            <Footer.Title title='Legal' className='text-white'/>
                             <Footer.LinkGroup col>
                             <Footer.Link href="#">
-                                <span className='border-none hover:border-none cursor-pointer hover:text-gray-400'>
+                                <span className='border-none hover:border-none cursor-pointer text-white hover:text-gray-400'>
                                     Privacy Policy
                                 </span>
                             </Footer.Link>
                             <Footer.Link href="#">
-                                <span className='border-none hover:border-none cursor-pointer hover:text-gray-400'>
+                                <span className='border-none hover:border-none cursor-pointer text-white hover:text-gray-400'>
                                     Terms & Conditions
                                 </span>
                             </Footer.Link>

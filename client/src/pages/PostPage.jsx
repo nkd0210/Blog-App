@@ -62,8 +62,8 @@ export default function PostPage() {
 
         //bg-gradient-to-r from-pink-200 to-blue-200 dark:from-orange-100 dark:to-purple-300
     return (
-        <main className='p-3 flex flex-col max-w-6xl mx-auto my-3 min-h-screen rounded-[20px] bg-summerBeach dark:bg-nightsky bg-center bg-contain shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-indigo-500/90' >
-            <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl text-cyan-500 dark:text-purple-500'>
+        <main className='p-3 flex flex-col max-w-6xl mx-auto my-3 min-h-screen rounded-[20px] bg-summerBeach dark:bg-mystery bg-contain shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-indigo-500/90' >
+            <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl text-cyan-400 dark:text-purple-500'>
                 {post && post.title}
             </h1>
             <Link
@@ -78,7 +78,7 @@ export default function PostPage() {
                 <img
                     src={post && post.image}
                     alt={post && post.title}
-                    className='h-full w-full object-contain '
+                    className='h-full w-full object-contain'
                 />
             </div>
             <div className='flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-md text-red-400 dark:text-blue-400'>
@@ -96,8 +96,8 @@ export default function PostPage() {
             </div>
             <CommentSection postId={post._id} postTitle={post.title} />
 
-            <div className='flex flex-col justify-center items-center my-5'>
-                <h1 className='text-2xl text-cyan-600 dark:text-indigo-500 mt-[20px]'>Recent articles</h1>
+            <div className='flex flex-col justify-center items-center my-5 border shadow-lg border-cyan-200 shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90 rounded-t-[50px] p-[20px] bg-summer bg-cover dark:bg-sky'>
+                <h1 className='text-2xl text-green-400 dark:text-indigo-400 mt-[20px]'>Recent articles</h1>
                 <div className='flex flex-wrap gap-5 mt-5 justify-center items-center mx-auto'>
                     {recentPosts && recentPosts.map((post) => <PostCard key={post._id} post={post} />)}
                 </div>

@@ -117,7 +117,7 @@ export default function CommentSection({ postId, postTitle }) {
     return (
         <div className="max-w-2xl mx-auto w-full p-3 border mt-[20px] rounded-[20px] border-cyan-400 shadow-cyan-500/50 dark:border-indigo-400 shadow-lg dark:shadow-indigo-500/90">
             {currentUser ? (
-                <div className="flex items-center gap-1 my-5 text-black text-[16px]">
+                <div className="flex items-center gap-1 my-5 dark:text-indigo-400 text-[16px]">
                     <p className="pr-[10px]">Signed in as :</p>
                     <img
                         className="h-5 w-5 mr-1 object-cover rounded-full"
@@ -126,7 +126,7 @@ export default function CommentSection({ postId, postTitle }) {
                     />
                     <Link
                         to={"/dashboard?tab=profile"}
-                        className="text-[14px] text-cyan-600 hover:underline"
+                        className="text-[14px] text-indigo-300 dark:text-cyan-600 hover:underline"
                     >
                         @{currentUser.username}
                     </Link>

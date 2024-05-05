@@ -71,7 +71,7 @@ export default function DashboardComp() {
     return (
         <div className="p-3 md:mx-auto ">
             {/* GENERAL VIEW */}
-            <div className="flex-wrap flex gap-4 justify-center border shadow-lg border-cyan-200 shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90 rounded-t-[50px] p-[20px] bg-summerBeach2 bg-cover dark:bg-sky ">
+            <div className="flex-wrap flex gap-4 justify-center border shadow-lg border-cyan-200 shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90 rounded-t-[50px] p-[20px] bg-summerBeach2 bg-cover dark:bg-full-moon dark:bg-cover ">
                 <div className="flex flex-col p-3 bg-blue-300 dark:bg-indigo-300 gap-4 md:w-72 w-full rounded-md shadow-md">
                     <div className="flex justify-between">
                         <div className="">
@@ -128,7 +128,7 @@ export default function DashboardComp() {
             <div className="flex flex-wrap gap-5 py-3 mx-auto justify-center border border-t-0 border-cyan-200 shadow-lg shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90 rounded-b-[50px]">
                 <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md bg-white dark:bg-gray-800">
                     <div className="flex justify-between  p-3 text-sm font-semibold">
-                        <h1 className="text-center p-2">Recent users</h1>
+                        <h1 className="text-center  p-2">Recent users</h1>
                         <Button outline gradientDuoTone="purpleToPink">
                             <Link to={"/dashboard?tab=users"}>See all</Link>
                         </Button>
@@ -156,7 +156,7 @@ export default function DashboardComp() {
                     </Table>
                 </div>
                 <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md bg-white dark:bg-gray-800">
-                    <div className="flex justify-between  p-3 text-sm font-semibold">
+                    <div className="flex justify-between  p-3 text-sm font-semibold ">
                         <h1 className="text-center p-2">Recent comments</h1>
                         <Button outline gradientDuoTone="purpleToPink">
                             <Link to={"/dashboard?tab=comments"}>See all</Link>
@@ -181,7 +181,7 @@ export default function DashboardComp() {
                     </Table>
                 </div>
                 <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md bg-white dark:bg-gray-800">
-                    <div className="flex justify-between  p-3 text-sm font-semibold">
+                    <div className="flex justify-between  p-3 text-sm font-semibold ">
                         <h1 className="text-center p-2">Recent posts</h1>
                         <Button outline gradientDuoTone="purpleToPink">
                             <Link to={"/dashboard?tab=posts"}>See all</Link>

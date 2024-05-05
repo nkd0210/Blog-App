@@ -18,7 +18,7 @@ export default function Dashboard() {
     }
   }, [location.search]);
   return (
-    <div className='min-h-screen flex flex-col md:flex-row bg-summer dark:bg-mystery bg-cover'>
+    <div className='min-h-screen flex flex-col md:flex-row bg-tree-repeat dark:bg-sky bg-cover dark:bg-contain'>
       <div className="md:w-56">
         {/* Sidebar */}
         <DashSidebar />

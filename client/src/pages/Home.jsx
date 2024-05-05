@@ -16,10 +16,10 @@ export default function Home() {
   }, []);
   
   return (
-    <div className=' bg-summerBeach dark:bg-mystery bg-contain p-[5px] md:p-[12px] lg:py-[20px] lg:px-0'>
+    <div className=' bg-tree-repeat dark:bg-mystery dark:bg-contain p-[5px] md:p-[12px] lg:py-[20px] lg:px-0'>
       {/* HERO */}
-      <div className='flex flex-col gap-6 p-[22px] lg:p-28 mb-[20px] max-w-6xl mx-auto border border-cyan-300 dark:border-indigo-400 rounded-[10px] shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-indigo-500/90 bg-summer dark:bg-sky bg-cover '>
-        <h1 className='text-3xl font-bold lg:text-6xl text-cyan-500 dark:text-purple-500'>Welcome to my Blog</h1>
+      <div className='flex flex-col gap-6 p-[22px] lg:p-28 mb-[20px] max-w-6xl mx-auto border border-green-300 dark:border-indigo-400 rounded-[10px] shadow-lg shadow-green-500/90 dark:shadow-lg dark:shadow-indigo-500/90 bg-summer dark:bg-sky bg-cover '>
+        <h1 className='text-3xl font-bold lg:text-6xl text-green-300 dark:text-purple-500'>Welcome to my Blog</h1>
         <p className='text-white text-[18px] dark:text-gray-200 text-md'>
          Here, I share stories about my life, my hoobies and also some project codes I have done , inviting you to explore the worlds I create through words and lines of code. Join with me on this journey of discovery and inspiration!
         </p>
@@ -27,14 +27,14 @@ export default function Home() {
           to='/search'
           className='text-md text-white font-semibold'
         >
-          <div className="bg-orange-300 dark:bg-indigo-400 max-w-[150px] text-center rounded-[5px] p-[5px] hover:bg-cyan-400 hover:text-orange-400 dark:hover:text-indigo-700 hover:font-bold hover:scale-x-105 tranform transition-transform">
+          <div className="bg-green-300 dark:bg-indigo-400 max-w-[150px] text-center rounded-[5px] p-[5px] hover:bg-green-600 hover:text-green-300 dark:hover:text-indigo-700 hover:font-bold hover:scale-x-105 tranform transition-transform">
             View all posts
           </div>
         </Link>
       </div>
 
       {/* CALL TO ACTION */}
-      <div className='p-3 bg-blue-100 dark:bg-slate-700'>
+      <div className='p-3 bg-green-100 dark:bg-slate-700  dark:bg-star-sky-night dark:bg-cover'>
         <CallToAction />
       </div>
 

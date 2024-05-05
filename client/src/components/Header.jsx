@@ -57,7 +57,7 @@ export default function Header() {
     <Navbar className='border-b-2 border-gray-900 bg-blue-100 bg-woodDark bg-contain'>
       <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
         <span className='px-2 py-1 bg-gradient-to-r from-indigo-400 via-slate-400-500 to-pink-500 rounded-lg text-red-300'>Kaydi's</span> 
-        <span className='ml-[5px] text-cyan-200 dark:text-indigo-400'>Stories</span>
+        <span className='ml-[5px] text-green-300 dark:text-indigo-400'>Stories</span>
       </Link>
       <form onSubmit={handleSubmit}>
         <TextInput
@@ -111,21 +111,21 @@ export default function Header() {
       <Navbar.Collapse>
         <Navbar.Link active={path === '/'} as={'div'}>
           <Link to="/">
-            <p className='text-[18px] text-cyan-300 dark:text-indigo-400   hover:text-cyan-500  dark:hover:text-purple-400 hover:cursor-pointer sm:hover:scale-125 transform transition-transform  '>
+            <p className='text-[18px] text-green-300 dark:text-indigo-400   hover:text-cyan-500  dark:hover:text-purple-400 hover:cursor-pointer sm:hover:scale-125 transform transition-transform  '>
               Home
             </p>
           </Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/about'} as={'div'}>
           <Link to="/about">
-            <p className='text-[18px] text-cyan-300 dark:text-indigo-400   hover:text-cyan-500  dark:hover:text-purple-400 hover:cursor-pointer sm:hover:scale-125 transform transition-transform  '>
+            <p className='text-[18px] text-green-300 dark:text-indigo-400   hover:text-cyan-500  dark:hover:text-purple-400 hover:cursor-pointer sm:hover:scale-125 transform transition-transform  '>
               About
             </p>
           </Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/projects'} as={'div'}>
           <Link to="/projects">
-            <p className='text-[18px] text-cyan-300 dark:text-indigo-400   hover:text-cyan-500  dark:hover:text-purple-400 hover:cursor-pointer sm:hover:scale-125 transform transition-transform '>
+            <p className='text-[18px] text-green-300 dark:text-indigo-400   hover:text-cyan-500  dark:hover:text-purple-400 hover:cursor-pointer sm:hover:scale-125 transform transition-transform '>
               Projects
             </p>
           </Link>
