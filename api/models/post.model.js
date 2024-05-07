@@ -30,7 +30,7 @@ const postSchema = new mongoose.Schema(
         }
     },{timestamps: true}
 );
-
+// timestamps -> createdAt + updatedAt
 const Post = mongoose.model('Post', postSchema)
 
 export default Post;

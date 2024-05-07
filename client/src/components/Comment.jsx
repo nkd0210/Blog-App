@@ -68,7 +68,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                     <span className='font-bold mr-1 text-xs truncate text-blue-500 dark:text-pink-500'>
                         {user ? `@${user.username}` : 'anonymous user'}
                     </span>
-                    <span className='text-black dark:text-[#666] text-[14px]'>
+                    <span className='text-black dark:text-[#666] text-[12px]'>
                         {moment(comment.createdAt).fromNow()}
                     </span>
                 </div>
@@ -103,7 +103,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                 ) : (
                     <>
                         <p className='text-black dark:text-white pb-2'>{comment.content}</p>
-                        <div className='flex items-center pt-2 text-xs border-t dark:border-gray-700 max-w-fit gap-2'>
+                        <div className='flex items-center pt-2 text-xs max-w-fit gap-2'>
                             <button
                                 type='button'
                                 onClick={() => onLike(comment._id)}
@@ -114,7 +114,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                             >
                                 <FaThumbsUp className='text-sm' />
                             </button>
-                            <p className='text-black dark:text-gray-400'>
+                            <p className='text-black dark:text-gray-100'>
                                 {comment.numberOfLikes > 0 &&
                                     comment.numberOfLikes +
                                     ' ' +
@@ -126,14 +126,14 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                                         <button
                                             type='button'
                                             onClick={handleEdit}
-                                            className='text-black dark:text-gray-400 hover:text-blue-500'
+                                            className='text-black dark:text-gray-100 hover:text-red-500 dark:hover:text-indigo-500'
                                         >
                                             Edit
                                         </button>
                                         <button
                                             type='button'
                                             onClick={() => onDelete(comment._id)}
-                                            className='text-black dark:text-gray-400 hover:text-red-500'
+                                            className='text-black dark:text-gray-100 hover:text-red-500 dark:hover:text-indigo-500'
                                         >
                                             Delete
                                         </button>

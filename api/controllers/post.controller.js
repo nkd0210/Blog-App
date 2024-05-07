@@ -8,6 +8,7 @@ export const create = async (req, res, next) => {
   if (!req.body.title || !req.body.content) {
     return next(errorHandler(400, "All fields are required"));
   }
+  //VD: Hello World -> hello-world -> SEO for url
   const slug = req.body.title
     .split(" ")
     .join("-")
@@ -40,7 +41,7 @@ export const getposts = async (req, res, next) => {
       ...(req.query.postId && { _id: req.query.postId }),
       ...(req.query.searchTerm && {
         $or: [
-          { title: { $regex: req.query.searchTerm, $options: "i" } },
+          { title: { $regex: req.query.searchTerm, $options: "i" } }, // i: not matter lowercase or uppercase
           { content: { $regex: req.query.searchTerm, $options: "i" } },
         ],
       }),

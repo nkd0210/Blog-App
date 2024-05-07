@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import CallToAction from '../components/CallToAction';
 import CommentSection from '../components/CommentSection';
 import PostCard from '../components/PostCard';
+import BackToTopButton from '../components/BackToTopButton';
 
 export default function PostPage() {
 
@@ -102,6 +103,8 @@ export default function PostPage() {
                     {recentPosts && recentPosts.map((post) => <PostCard key={post._id} post={post} />)}
                 </div>
             </div>
+
+            <BackToTopButton />
         </main>
     )
 }

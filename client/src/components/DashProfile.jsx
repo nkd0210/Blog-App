@@ -143,7 +143,7 @@ export default function DashProfile() {
   }
 
   return (
-    <div className='max-w-lg mx-auto p-3 w-full border my-[20px] rounded-[40px] border-cyan-200 shadow-lg shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90'>
+    <div className='max-w-lg mx-auto p-3 w-full border my-[20px] bg-summer dark:bg-full-moon bg-cover rounded-[40px] border-cyan-200 shadow-lg shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90'>
       <h1 className='my-7 text-center font-semibold text-3xl text-orange-400 dark:text-purple-400' >Profile</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-5'>
         <input type='file' accept='image/*' onChange={handleImageChange} ref={filePickerRef} hidden />
