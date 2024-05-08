@@ -5,6 +5,7 @@ import CallToAction from '../components/CallToAction';
 import CommentSection from '../components/CommentSection';
 import PostCard from '../components/PostCard';
 import BackToTopButton from '../components/BackToTopButton';
+import styled from 'styled-components'
 
 export default function PostPage() {
 
@@ -63,7 +64,8 @@ export default function PostPage() {
 
         //bg-gradient-to-r from-pink-200 to-blue-200 dark:from-orange-100 dark:to-purple-300
     return (
-        <main className='p-3 flex flex-col max-w-6xl mx-auto my-3 min-h-screen rounded-[20px] bg-summerBeach dark:bg-mystery bg-contain shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-indigo-500/90' >
+        <Wrapper>
+         <main className='p-3 flex flex-col max-w-6xl mx-auto my-3 min-h-screen rounded-[20px] bg-summerBeach dark:bg-mystery bg-contain shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-indigo-500/90' >
             <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl text-cyan-400 dark:text-purple-500'>
                 {post && post.title}
             </h1>
@@ -82,17 +84,17 @@ export default function PostPage() {
                     className='h-full w-full object-contain'
                 />
             </div>
-            <div className='flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-md text-red-400 dark:text-blue-400'>
+            <div className='flex justify-between p-3 mx-auto w-full max-w-2xl text-md text-red-600 dark:text-blue-400'>
                 <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
                 <span className='italic'>
                     {post && (post.content.length / 1000).toFixed(0)} mins read
                 </span>
             </div>
             <div
-                className='p-3 max-w-2xl mx-auto w-full post-content '
+                className='p-3 max-w-2xl mx-auto w-full post-content border rounded-[10px] border-gray-400 dark:border-indigo-400 bg-opacity-50 backdrop-blur-md'
                 dangerouslySetInnerHTML={{ __html: post && post.content }}
             ></div>
-            <div className=' mx-auto w-full'>
+            <div className=' mx-auto w-full mt-[20px]'>
                 <CallToAction />
             </div>
             <CommentSection postId={post._id} postTitle={post.title} />
@@ -105,7 +107,12 @@ export default function PostPage() {
             </div>
 
             <BackToTopButton />
-        </main>
+         </main>
+        </Wrapper>
     )
 }
+
+const Wrapper = styled.section`
+    
+`
 

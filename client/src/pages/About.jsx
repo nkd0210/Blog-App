@@ -1,8 +1,8 @@
 export default function About() {
   return (
-    <div className='min-h-screen lg:min-h-[700px] flex items-center justify-center bg-pool dark:bg-mystery bg-cover bg-center '>
+    <div className='min-h-screen lg:min-h-[700px] flex items-center justify-center bg-pool dark:bg-mystery bg-cover bg-center  '>
       <div className='max-w-2xl mx-auto p-3 text-center'>
-        <div className="border p-[20px] rounded-[20px] border-cyan-400 dark:border-indigo-400 shadow-lg shadow-cyan-500/90 dark:shadow-indigo-500/90">
+        <div className="border p-[20px] rounded-[20px] border-cyan-400 dark:border-indigo-400 shadow-lg shadow-cyan-500/90 dark:shadow-indigo-500/90  bg-opacity-50 backdrop-blur-md">
           <h1 className='text-3xl font font-semibold text-center text-orange-400 dark:text-purple-400'>
             About Kaydi's Blog
           </h1>

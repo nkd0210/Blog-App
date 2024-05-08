@@ -4,6 +4,7 @@
 
 body {
   height: 100vh;
+  font-family: "Montserrat", sans-serif;
 }
 
 .ql-editor {
@@ -12,7 +13,8 @@ body {
 
 .post-content p {
   margin-bottom: 0.5rem;
-  color: #333;
+  color: black;
+
 }
 
 .post-content h1 {
@@ -23,6 +25,7 @@ body {
 }
 .dark .post-content h1 {
   color: #fff;
+
 }
 
 .post-content h2 {

@@ -52,7 +52,7 @@ export default function Home() {
             </div>
             <Link
               to={'/search'}
-              className='text-xl text-cyan-300 dark:text-indigo-500 hover:underline text-center'
+              className='text-[16px] px-[5px] font-semibold text-cyan-300 dark:text-white hover:no-underline max-w-[200px] rounded-[10px] mx-auto bg-green-300 dark:bg-indigo-400  text-center p-[5px] hover:bg-green-600 hover:text-green-300 dark:hover:text-indigo-600 hover:font-bold hover:scale-x-105 tranform transition-transform'
             >
                 View all posts
             </Link>

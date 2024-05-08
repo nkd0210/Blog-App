@@ -107,7 +107,7 @@ export default function Search() {
     return (
         <div className='flex flex-col md:flex-col bg-summer bg-cover dark:bg-none '>
             {/* SEARCH BAR */}
-            <div className='p-7 border-b md:border-r bg-purple-100 bg-navbarWood bg-contain max-w-[900px] mx-auto my-[20px] rounded-[20px] shadow-lg border-cyan-200 shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90  '>
+            <div className='p-7 border-b md:border-r bg-purple-100 bg-navbarWood bg-contain max-w-[1300px] mx-auto my-[20px] rounded-[20px] shadow-lg border-cyan-200 shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90  '>
                 <form className='flex flex-col lg:flex-row gap-8 mx-auto'>
                     <div className='flex items-center gap-2 w-full'>
                         <label className='whitespace-nowrap font-semibold text-gray-300'>
@@ -135,7 +135,7 @@ export default function Search() {
                             onChange={handleChange}
                             value={sidebarData.category}
                             id='category'
-                            className='min-w-[150px]'
+                            className='min-w-[155px]'
                         >
                             <option value='uncategorized'>Uncategorized</option>
                             <option value='reactjs'>React.js</option>
@@ -167,7 +167,7 @@ export default function Search() {
                     {showMore && (
                         <button
                             onClick={handleShowMore}
-                            className='text-cyan-500 text-lg hover:underline p-7 w-full'
+                            className='text-cyan-500 text-[16px] px-[5px] font-semibold dark:text-white hover:no-underline max-w-[200px] rounded-[10px] mx-auto bg-green-300 dark:bg-indigo-400  text-center p-[5px] hover:bg-green-600 hover:text-green-300 dark:hover:text-indigo-600 hover:font-bold hover:scale-x-105 tranform transition-transform'
                         >
                             Show More
                         </button>

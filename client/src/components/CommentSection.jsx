@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Comment from "./Comment";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
+import styled from "styled-components";
 
 export default function CommentSection({ postId, postTitle }) {
     const { currentUser } = useSelector((state) => state.user);
@@ -115,7 +116,7 @@ export default function CommentSection({ postId, postTitle }) {
     }
 
     return (
-        <div className="max-w-2xl mx-auto w-full p-3 border mt-[20px] rounded-[20px] border-cyan-400 shadow-cyan-500/50 dark:border-indigo-400 shadow-lg dark:shadow-indigo-500/90">
+        <div className="max-w-2xl max-h-[800px] overflow-y-auto  mx-auto w-full p-3 border mt-[20px] rounded-[20px] border-cyan-400 shadow-cyan-500/50 dark:border-indigo-400 shadow-lg dark:shadow-indigo-500/90">
             {currentUser ? (
                 <div className="flex items-center gap-1 my-5 dark:text-indigo-400 text-[16px]">
                     <p className="pr-[10px]">Signed in as :</p>
@@ -217,8 +218,12 @@ export default function CommentSection({ postId, postTitle }) {
                         </div>
                     </div>
                 </Modal.Body>
-            </Modal>
+            </Modal>    
 
         </div>
+       
     );
 }
+
+
+
