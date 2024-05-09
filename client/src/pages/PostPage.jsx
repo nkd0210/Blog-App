@@ -40,7 +40,7 @@ export default function PostPage() {
         fetchPost();
 
     }, [postSlug]);
-    console.log(post)
+
 
     useEffect(() => {
         const getUser = async() => {
@@ -55,8 +55,7 @@ export default function PostPage() {
             }
         }
         getUser();
-    },[postSlug])
-    console.log(user)
+    },[post])
 
     useEffect(() => {
         try {
@@ -83,10 +82,19 @@ export default function PostPage() {
 
     return (
         <Wrapper>
-         <main className='p-3 flex flex-col max-w-6xl mx-auto my-3 min-h-screen rounded-[20px] border border-gray-400 dark:border-indigo-400 bg-gray-100 dark:bg-[#11181f] shadow-gray-500/50 shadow-lg dark:shadow-indigo-500/90' >
+         <main className='p-3 flex flex-col max-w-6xl mx-auto my-3 min-h-screen rounded-[20px]  bg-gray-100 dark:bg-[#11181f] shadow-gray-500/50 shadow-lg dark:shadow-indigo-500/90' >
             <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl text-gray-500 dark:text-purple-500'>
                 {post && post.title}
             </h1>
+            <div className='flex flex-row align-items-center justify-center'>
+                <span className=''>
+                    <img src={user.profilePicture} alt="" className='max-w-[50px] max-h-[50px] w-[50px] h-[50px] rounded-full overflow-hidden border border-gray-400 dark:border-indigo-400' />
+                </span>
+                <span className=' flex flex-col font-semibold text-gray-600 dark:text-gray-300 '>
+                    <p>By {user.username}</p>
+                    <p>Contact me through: {user.email}</p>
+                </span>
+            </div>
             <Link
                 to={`/search?category=${post && post.category}`}
                 className='self-center mt-5'
