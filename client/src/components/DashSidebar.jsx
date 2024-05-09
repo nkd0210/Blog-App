@@ -64,7 +64,7 @@ export default function DashSidebar() {
               Profile
             </Sidebar.Item>
           </Link>
-          {currentUser.isAdmin &&
+          {currentUser &&
             (<Link to='/dashboard?tab=posts'>
               <Sidebar.Item
                 active={tab === 'posts'}
@@ -76,7 +76,7 @@ export default function DashSidebar() {
             </Link>)
           }
           {currentUser.isAdmin && (
-            <>
+            
               <Link to='/dashboard?tab=users'>
                 <Sidebar.Item
                   active={tab === 'users'}
@@ -88,6 +88,10 @@ export default function DashSidebar() {
                   Users
                 </Sidebar.Item>
               </Link>
+            
+          )}
+          {
+            currentUser && (
               <Link to='/dashboard?tab=comments'>
                 <Sidebar.Item
                   active={tab === 'comments'}
@@ -99,8 +103,8 @@ export default function DashSidebar() {
                   Comments
                 </Sidebar.Item>
               </Link>
-            </>
-          )}
+            )
+          }
           <Sidebar.Item onClick={handleSignout} icon={HiArrowSmRight} className="cursor-pointer text-red-700 dark:text-red-400">
             Sign out
           </Sidebar.Item>

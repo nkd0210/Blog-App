@@ -13,8 +13,9 @@ export default function PostPage() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [post, setPost] = useState(null);
+    const [user, setUser] = useState({});
     const [recentPosts, setRecentPosts] = useState(null);
-
+    
     useEffect(() => {
         const fetchPost = async () => {
             try {
@@ -37,7 +38,25 @@ export default function PostPage() {
             }
         };
         fetchPost();
+
     }, [postSlug]);
+    console.log(post)
+
+    useEffect(() => {
+        const getUser = async() => {
+            try {
+                const res = await fetch(`/api/user/${post.userId}`)
+                const data = await res.json();
+                if(res.ok) {
+                    setUser(data)
+                }
+            } catch (error) {
+                console.log(error.message)
+            }
+        }
+        getUser();
+    },[postSlug])
+    console.log(user)
 
     useEffect(() => {
         try {
@@ -62,11 +81,10 @@ export default function PostPage() {
             </div>
         );
 
-        //bg-gradient-to-r from-pink-200 to-blue-200 dark:from-orange-100 dark:to-purple-300
     return (
         <Wrapper>
-         <main className='p-3 flex flex-col max-w-6xl mx-auto my-3 min-h-screen rounded-[20px] bg-summerBeach dark:bg-mystery bg-contain shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-indigo-500/90' >
-            <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl text-cyan-400 dark:text-purple-500'>
+         <main className='p-3 flex flex-col max-w-6xl mx-auto my-3 min-h-screen rounded-[20px] border border-gray-400 dark:border-indigo-400 bg-gray-100 dark:bg-[#11181f] shadow-gray-500/50 shadow-lg dark:shadow-indigo-500/90' >
+            <h1 className='text-3xl mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl text-gray-500 dark:text-purple-500'>
                 {post && post.title}
             </h1>
             <Link
@@ -84,14 +102,14 @@ export default function PostPage() {
                     className='h-full w-full object-contain'
                 />
             </div>
-            <div className='flex justify-between p-3 mx-auto w-full max-w-2xl text-md text-red-600 dark:text-blue-400'>
+            <div className='flex justify-between p-3 mx-auto w-full max-w-[700px] text-md text-red-600 dark:text-blue-400'>
                 <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
                 <span className='italic'>
                     {post && (post.content.length / 1000).toFixed(0)} mins read
                 </span>
             </div>
             <div
-                className='p-3 max-w-2xl mx-auto w-full post-content border rounded-[10px] border-gray-400 dark:border-indigo-400 bg-opacity-50 backdrop-blur-md'
+                className='p-3 max-w-[700px] mx-auto w-full post-content border rounded-[20px] border-gray-400 dark:border-indigo-300 bg-opacity-50 backdrop-blur-md'
                 dangerouslySetInnerHTML={{ __html: post && post.content }}
             ></div>
             <div className=' mx-auto w-full mt-[20px]'>
@@ -99,8 +117,8 @@ export default function PostPage() {
             </div>
             <CommentSection postId={post._id} postTitle={post.title} />
 
-            <div className='flex flex-col justify-center items-center my-5 border shadow-lg border-cyan-200 shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90 rounded-t-[50px] p-[20px] bg-summer bg-cover dark:bg-sky'>
-                <h1 className='text-2xl text-green-400 dark:text-indigo-400 mt-[20px]'>Recent articles</h1>
+            <div className='flex flex-col justify-center items-center my-5 border shadow-lg border-gray-300 shadow-gray-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90 rounded-t-[50px] p-[20px] bg-gray-100 dark:bg-[#11181f]'>
+                <h1 className='text-2xl text-gray-500 dark:text-indigo-400 mt-[20px]'>Recent articles</h1>
                 <div className='flex flex-wrap gap-5 mt-5 justify-center items-center mx-auto'>
                     {recentPosts && recentPosts.map((post) => <PostCard key={post._id} post={post} />)}
                 </div>

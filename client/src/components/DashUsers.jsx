@@ -73,18 +73,18 @@ export default function DashUsers() {
 
 
   return (
-    <div className="w-full table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500 bg-tree-repeat dark:bg-sky bg-cover dark:bg-contain">
+    <div className="px-[20px] w-full max-h-[800px] overscroll-y-auto table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500 bg-gray-100 dark:bg-[#11181f]">
       {currentUser.isAdmin && users.length > 0 ? (
         <>
           <Table hoverable className="shadow-md">
             <Table.Head>
-              <Table.HeadCell>Date created</Table.HeadCell>
-              <Table.HeadCell>User ID</Table.HeadCell>
-              <Table.HeadCell>User image</Table.HeadCell>
-              <Table.HeadCell>Username</Table.HeadCell>
-              <Table.HeadCell>Email</Table.HeadCell>
-              <Table.HeadCell>Admin</Table.HeadCell>
-              <Table.HeadCell>Delete</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Date created</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">User ID</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">User image</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Username</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Email</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Admin</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Delete</Table.HeadCell>
               
             </Table.Head>
             {

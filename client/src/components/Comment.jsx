@@ -65,7 +65,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
             <div className='flex-1'>
                 {/* ten nguoi dung + thoi gian */}
                 <div className='flex items-center mb-[6px]'>
-                    <span className='font-bold mr-1 text-xs truncate text-blue-500 dark:text-pink-500'>
+                    <span className='font-bold mr-1 text-xs truncate text-indigo-500 dark:text-pink-500'>
                         {user ? `@${user.username}` : 'anonymous user'}
                     </span>
                     <span className='text-black dark:text-[#666] text-[12px]'>

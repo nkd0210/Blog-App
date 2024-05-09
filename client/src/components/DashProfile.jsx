@@ -143,8 +143,8 @@ export default function DashProfile() {
   }
 
   return (
-    <div className='max-w-lg mx-auto p-3 w-full border my-[20px] bg-summer dark:bg-full-moon bg-cover rounded-[40px] border-cyan-200 shadow-lg shadow-cyan-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90'>
-      <h1 className='my-7 text-center font-semibold text-3xl text-orange-400 dark:text-purple-400' >Profile</h1>
+    <div className='max-w-lg mx-auto p-3 w-full border my-[20px] bg-summer dark:bg-full-moon bg-cover rounded-[40px] border-gray-200 shadow-lg shadow-gray-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90'>
+      <h1 className='my-7 text-center font-semibold text-3xl text-gray-700 dark:text-purple-400' >Profile</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-5'>
         <input type='file' accept='image/*' onChange={handleImageChange} ref={filePickerRef} hidden />
         <div className=" relative w-32 h-32 self-center cursor-pointer shadow-md overflow-hidden rounded-full" onClick={() => filePickerRef.current.click()}>
@@ -179,7 +179,10 @@ export default function DashProfile() {
         <Button type='submit' className='bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ...'disabled={loading || imageFileUploading}>
          {loading ? 'Loading...' : 'Update'}
         </Button>
-        {currentUser.isAdmin && (
+
+        {/* de user co the create post thi chi can currentUser, k can currentUser.isAdmin */}
+
+        {currentUser && (
           <Link to={'/create-post'}>
             <Button type='button' className='w-full' gradientDuoTone='purpleToPink' >Create a post</Button>
           </Link>

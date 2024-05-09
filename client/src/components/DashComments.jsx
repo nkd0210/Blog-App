@@ -13,19 +13,32 @@ export default function DashComments() {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await fetch(`/api/comment/getcomments`);
-        const data = await res.json();
-        if (res.ok) {
-          setComments(data.comments);
-          if (data.comments.length < 9) {
-            setShowMore(false);
+
+        if (currentUser.isAdmin) {
+          const res = await fetch(`/api/comment/getcomments`);
+          const data = await res.json();
+          if (res.ok) {
+            setComments(data.comments);
+            if (data.comments.length < 9) {
+              setShowMore(false);
+            }
+          }
+        } else {
+          const res = await fetch(`/api/comment/getcomments?userId=${currentUser._id}`);
+          const data = await res.json();
+          // console.log(data)
+          if (res.ok) {
+            setComments(data.comments);
+            if (data.comments.length < 9) {
+              setShowMore(false);
+            }
           }
         }
       } catch (error) {
         console.log(error.message);
       }
     };
-    if (currentUser.isAdmin) {
+    if (currentUser) {
       fetchComments();
     }
   }, [currentUser._id]);
@@ -72,17 +85,17 @@ export default function DashComments() {
   };
 
   return (
-    <div className='w-full table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500 bg-tree-repeat dark:bg-sky bg-cover dark:bg-contain'>
-      {currentUser.isAdmin && comments.length > 0 ? (
+    <div className='px-[20px] w-full max-h-[800px] overscroll-y-auto table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500 bg-gray-100 dark:bg-[#11181f]'>
+      {currentUser && comments.length > 0 ? (
         <>
           <Table hoverable className='shadow-md'>
             <Table.Head>
-              <Table.HeadCell>Date updated</Table.HeadCell>
-              <Table.HeadCell>Comment content</Table.HeadCell>
-              <Table.HeadCell>Number of likes</Table.HeadCell>
-              <Table.HeadCell>Post Title</Table.HeadCell>
-              <Table.HeadCell>User Id</Table.HeadCell>
-              <Table.HeadCell>Delete</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Date updated</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Comment content</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Number of likes</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Post Title</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">User Id</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Delete</Table.HeadCell>
             </Table.Head>
             {comments.map((comment) => (
               <Table.Body className='divide-y' key={comment._id}>

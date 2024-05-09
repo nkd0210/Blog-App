@@ -116,7 +116,7 @@ export default function CommentSection({ postId, postTitle }) {
     }
 
     return (
-        <div className="max-w-2xl max-h-[800px] overflow-y-auto  mx-auto w-full p-3 border mt-[20px] rounded-[20px] border-cyan-400 shadow-cyan-500/50 dark:border-indigo-400 shadow-lg dark:shadow-indigo-500/90">
+        <div className="max-w-2xl max-h-[800px] overflow-y-auto  mx-auto w-full p-3 border mt-[20px] rounded-[20px] border-gray-400 shadow-gray-500/50 dark:border-indigo-400 shadow-lg dark:shadow-indigo-500/90">
             {currentUser ? (
                 <div className="flex items-center gap-1 my-5 dark:text-indigo-400 text-[16px]">
                     <p className="pr-[10px]">Signed in as :</p>
@@ -127,7 +127,7 @@ export default function CommentSection({ postId, postTitle }) {
                     />
                     <Link
                         to={"/dashboard?tab=profile"}
-                        className="text-[14px] text-indigo-300 dark:text-cyan-600 hover:underline"
+                        className="text-[14px] text-indigo-500 dark:text-cyan-600 hover:underline"
                     >
                         @{currentUser.username}
                     </Link>
@@ -135,7 +135,7 @@ export default function CommentSection({ postId, postTitle }) {
             ) : (
                 <div className="text-[16px] dark:text-cyan-500 my-5 flex gap-1">
                     You must be signed in to comment.
-                    <Link className="text-blue-500 hover:underline" to={"/sign-in"}>
+                    <Link className="text-indigo-500 hover:underline" to={"/sign-in"}>
                         Sign In
                     </Link>
                 </div>

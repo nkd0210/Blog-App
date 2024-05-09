@@ -16,21 +16,32 @@ export default function DashPosts() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch(`/api/post/getposts?userId=${currentUser._id}`);
-        const data = await res.json();
-        if (res.ok) {
-          setUserPosts(data.posts);
-          if (data.posts.length < 9) {
-            setShowMore(false);
+
+        if (currentUser.isAdmin) {
+          const res = await fetch(`/api/post/getposts`);
+          const data = await res.json();
+          if (res.ok) {
+            setUserPosts(data.posts);
+            if (data.posts.length < 9) {
+              setShowMore(false);
+            }
+          }
+        } else {
+          const res = await fetch(`/api/post/getposts?userId=${currentUser._id}`);
+          const data = await res.json();
+          if (res.ok) {
+            setUserPosts(data.posts);
+            if (data.posts.length < 9) {
+              setShowMore(false);
+            }
           }
         }
-
       } catch (error) {
         console.log(error.message);
       }
     }
 
-    if (currentUser.isAdmin) {
+    if (currentUser) {
       fetchPosts();
     }
 
@@ -59,10 +70,10 @@ export default function DashPosts() {
         method: 'DELETE',
       });
       const data = await res.json();
-      if(!res.ok) {
+      if (!res.ok) {
         console.log(data.message);
-      }else{
-        setUserPosts((prev) => 
+      } else {
+        setUserPosts((prev) =>
           prev.filter((post) => post._id !== postIdToDelete)
         )
       }
@@ -74,18 +85,18 @@ export default function DashPosts() {
 
 
   return (
-    <div className="w-full table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500 bg-tree-repeat dark:bg-sky bg-cover dark:bg-contain">
-      {currentUser.isAdmin && userPosts.length > 0 ? (
+    <div className=" px-[20px] max-h-[800px] overscroll-y-auto w-full table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500 bg-gray-100 dark:bg-[#11181f]">
+      {currentUser && userPosts.length > 0 ? (
         <>
           <Table hoverable className="shadow-md">
             <Table.Head>
-              <Table.HeadCell>Date updated</Table.HeadCell>
-              <Table.HeadCell>Post ID</Table.HeadCell>
-              <Table.HeadCell>Post image</Table.HeadCell>
-              <Table.HeadCell>Post title</Table.HeadCell>
-              <Table.HeadCell>Category</Table.HeadCell>
-              <Table.HeadCell>Delete</Table.HeadCell>
-              <Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Date updated</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Post ID</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Post image</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Post title</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Category</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">Delete</Table.HeadCell>
+              <Table.HeadCell className="bg-gray-300">
                 <span>Edit</span>
               </Table.HeadCell>
             </Table.Head>
@@ -99,15 +110,15 @@ export default function DashPosts() {
                       <Link to={`/post/${post.slug}`}>
                         <img src={post.image} alt={post.title} className="w-20 h-20 object-cover bg-gray-500" />
                       </Link>
-                    </Table.Cell>                   
+                    </Table.Cell>
                     <Table.Cell>
                       <Link className="font-medium text-blue-400 dark:text-pink-400" to={`/post/${post.slug}`}>{post.title}</Link>
                     </Table.Cell>
                     <Table.Cell>{post.category}</Table.Cell>
                     <Table.Cell>
-                      <span 
-                        className="font-medium text-red-500 hover:underline cursor-pointer" 
-                        onClick={()=> {
+                      <span
+                        className="font-medium text-red-500 hover:underline cursor-pointer"
+                        onClick={() => {
                           setShowModal(true);
                           setPostIdToDelete(post._id);
                         }}

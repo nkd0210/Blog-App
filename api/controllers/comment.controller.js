@@ -99,15 +99,21 @@ export const deleteComment = async (req, res, next) => {
 }
 
 export const getComments = async (req, res, next) => {
-  if (!req.user.isAdmin) {
-    return next(errorHandler(403, 'You are not allowed to get all comments'));
-  }
+  // if (!req.user.isAdmin) {
+  //   return next(errorHandler(403, 'You are not allowed to get all comments'));
+  // }
   try {
     const startIndex = parseInt(req.query.startIndex) || 0;
     const limit = parseInt(req.query.limit) || 9;
     const sortDirection = req.query.sort === 'asc' ? 1 : -1;
-    const comments = await Comment.find()
-      .sort({ createdAt: sortDirection })
+    const comments = await Comment.find(
+      {
+      ...(req.query.userId && { userId: req.query.userId }),
+      ...(req.query.postId && { postId: req.query.postId }),
+      ...(req.query.postTitle && { postTitle: req.query.postTitle }),
+      }
+    )
+      .sort({ updatedAt: sortDirection })
       .skip(startIndex)
       .limit(limit);
     const totalComments = await Comment.countDocuments();
