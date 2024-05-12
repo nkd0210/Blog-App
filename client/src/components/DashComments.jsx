@@ -86,7 +86,7 @@ export default function DashComments() {
 
   return (
     <div className='px-[20px] w-full max-h-[800px] overscroll-y-auto table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500 bg-gray-100 dark:bg-[#11181f]'>
-      {currentUser && comments.length > 0 ? (
+      {currentUser.isAdmin && comments.length > 0 ? (
         <>
           <Table hoverable className='shadow-md'>
             <Table.Head>
@@ -125,7 +125,7 @@ export default function DashComments() {
           {showMore && (
             <button
               onClick={handleShowMore}
-              className='w-full text-cyan-400 self-center text-sm py-7'
+              className='w-full flex justify-center text-[16px] my-[20px] px-[5px] font-semibold text-white hover:no-underline max-w-[200px] rounded-[10px] mx-auto bg-indigo-400  text-center p-[5px]  dark:hover:text-indigo-600 hover:font-bold hover:scale-x-105 tranform transition-transform'
             >
               Show more
             </button>

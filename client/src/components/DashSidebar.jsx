@@ -91,7 +91,7 @@ export default function DashSidebar() {
             
           )}
           {
-            currentUser && (
+            currentUser.isAdmin && (
               <Link to='/dashboard?tab=comments'>
                 <Sidebar.Item
                   active={tab === 'comments'}

@@ -71,7 +71,7 @@ export default function DashboardComp() {
     return (
         <div className="p-3 md:mx-auto px-[20px] ">
             {/* GENERAL VIEW */}
-            <div className="flex-wrap flex gap-4 justify-center border shadow-lg border-gray-200 shadow-gray-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90 rounded-t-[50px] p-[20px] bg-cover dark:bg-sky ">
+            <div className="flex-wrap flex gap-4 justify-center border shadow-lg border-gray-200 shadow-gray-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90 rounded-t-[20px] lg:rounded-t-[50px] p-[20px] ">
                 <div className="flex flex-col p-3 bg-gray-300 dark:bg-indigo-300 gap-4 md:w-72 w-full rounded-md shadow-md">
                     <div className="flex justify-between">
                         <div className="">
@@ -126,6 +126,7 @@ export default function DashboardComp() {
 
             {/* DETAIL TABLE */}
             <div className="flex flex-wrap gap-5 py-3 mx-auto justify-center border border-t-0 border-gray-200 shadow-lg shadow-gray-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90 rounded-b-[50px] bg-gray-100 dark:bg-[#11181f]">
+                {/* RECENT USER */}
                 <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md bg-white dark:bg-gray-800">
                     <div className="flex justify-between  p-3 text-sm font-semibold">
                         <h1 className="text-center  p-2">Recent users</h1>
@@ -155,32 +156,9 @@ export default function DashboardComp() {
                             ))}
                     </Table>
                 </div>
-                <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md bg-white dark:bg-gray-800">
-                    <div className="flex justify-between  p-3 text-sm font-semibold ">
-                        <h1 className="text-center p-2">Recent comments</h1>
-                        <Button outline gradientDuoTone="purpleToPink">
-                            <Link to={"/dashboard?tab=comments"}>See all</Link>
-                        </Button>
-                    </div>
-                    <Table hoverable>
-                        <Table.Head>
-                            <Table.HeadCell>Comment content</Table.HeadCell>
-                            <Table.HeadCell>Likes</Table.HeadCell>
-                        </Table.Head>
-                        {comments &&
-                            comments.map((comment) => (
-                                <Table.Body key={comment._id} className="divide-y">
-                                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                        <Table.Cell className="w-96">
-                                            <p className="line-clamp-2">{comment.content}</p>
-                                        </Table.Cell>
-                                        <Table.Cell>{comment.numberOfLikes}</Table.Cell>
-                                    </Table.Row>
-                                </Table.Body>
-                            ))}
-                    </Table>
-                </div>
-                <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md bg-white dark:bg-gray-800">
+
+                 {/* RECENT POSTS */}
+                 <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md bg-white dark:bg-gray-800">
                     <div className="flex justify-between  p-3 text-sm font-semibold ">
                         <h1 className="text-center p-2">Recent posts</h1>
                         <Button outline gradientDuoTone="purpleToPink">
@@ -211,6 +189,34 @@ export default function DashboardComp() {
                             ))}
                     </Table>
                 </div>
+
+                {/* RECENT COMMENTS */}
+                <div className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md bg-white dark:bg-gray-800">
+                    <div className="flex justify-between  p-3 text-sm font-semibold ">
+                        <h1 className="text-center p-2">Recent comments</h1>
+                        <Button outline gradientDuoTone="purpleToPink">
+                            <Link to={"/dashboard?tab=comments"}>See all</Link>
+                        </Button>
+                    </div>
+                    <Table hoverable>
+                        <Table.Head>
+                            <Table.HeadCell>Comment content</Table.HeadCell>
+                            <Table.HeadCell>Likes</Table.HeadCell>
+                        </Table.Head>
+                        {comments &&
+                            comments.map((comment) => (
+                                <Table.Body key={comment._id} className="divide-y">
+                                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                        <Table.Cell className="w-96">
+                                            <p className="line-clamp-2">{comment.content}</p>
+                                        </Table.Cell>
+                                        <Table.Cell>{comment.numberOfLikes}</Table.Cell>
+                                    </Table.Row>
+                                </Table.Body>
+                            ))}
+                    </Table>
+                </div>
+               
             </div>
         </div>
     );

@@ -27,19 +27,23 @@ export default function PostCard({ post }) {
     //   </div>
     // </div>
     <Wrapper>
-      <div className=' max-w-[350px]  '>
-        <div className='w-[350px] h-[180px] rounded-t-[20px] overflow-hidden'>
+      <div className='box max-w-full h-[300px] dark:bg-slate-800 rounded-b-[20px] rounded-t-[20px] hover:cursor-pointer border border-gray-300 dark:border-gray-500 overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:border-gray-300 hover:dark:border-indigo-400 hover:shadow-lg hover:shadow-gray-500/90  hover:dark:shadow-indigo-500/90 '>
+        <div className='w-full h-[150px] rounded-t-[20px] overflow-hidden'>
           <Link to={`/post/${post.slug}`}>
             <img
               src={post.image}
               alt='post cover'
-              className='h-full w-full object-cover '
+              className='h-full w-full object-cover  '
             />
           </Link>
         </div>
-        <div className='flex flex-col border border-t-0 border-gray-500 p-[20px] rounded-b-[20px]'>
-          <p className='text-[16px] font-semibold'>{post.title}</p>
-          <span className=''>{post.category}</span>
+        <div className='flex flex-col p-[20px] rounded-b-[20px]'>
+          <p className='title text-[20px] capitalize font-semibold text-[#262A56] dark:text-[#E3CCAE]'>{post.title}</p>
+          <span>Category: 
+            <span className='italic ml-[5px]'>
+              {post.category}
+            </span>
+          </span>
         </div>
       </div>
     </Wrapper>
@@ -47,5 +51,7 @@ export default function PostCard({ post }) {
 }
 
 const Wrapper = styled.section`
-  
+  .box:hover .title {
+    color: lightblue;
+  }
 `

@@ -85,7 +85,7 @@ export default function DashPosts() {
 
 
   return (
-    <div className=" px-[20px] max-h-[800px] overscroll-y-auto w-full table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500 bg-gray-100 dark:bg-[#11181f]">
+    <div className="mb-[10px] px-[20px] max-h-[800px] overscroll-y-auto w-full table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500 bg-gray-100 dark:bg-[#11181f]">
       {currentUser && userPosts.length > 0 ? (
         <>
           <Table hoverable className="shadow-md">
@@ -136,7 +136,7 @@ export default function DashPosts() {
           </Table>
           {
             showMore && (
-              <button onClick={handleShowMore} className='w-full text-cyan-400 self-center text-sm py-7'>Show more</button>
+              <button onClick={handleShowMore} className='w-full flex justify-center text-[16px] my-[20px] px-[5px] font-semibold text-white hover:no-underline max-w-[200px] rounded-[10px] mx-auto bg-indigo-400  text-center p-[5px]  dark:hover:text-indigo-600 hover:font-bold hover:scale-x-105 tranform transition-transform'>Show more</button>
             )
           }
         </>

@@ -143,9 +143,9 @@ export default function DashProfile() {
   }
 
   return (
-    <div className='max-w-lg mx-auto p-3 w-full border my-[20px] bg-summer dark:bg-full-moon bg-cover rounded-[40px] border-gray-200 shadow-lg shadow-gray-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90'>
-      <h1 className='my-7 text-center font-semibold text-3xl text-gray-700 dark:text-purple-400' >Profile</h1>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-5'>
+    <div className='max-w-lg mx-auto p-3 w-full border my-[20px] bg-gray-100 dark:bg-[#11181f] rounded-[40px] border-gray-200 shadow-lg shadow-gray-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90'>
+      {/* <h1 className='my-7 uppercase text-center font-semibold text-3xl text-gray-700 dark:text-purple-400' >Profile</h1> */}
+      <form onSubmit={handleSubmit} className='flex flex-col gap-5 lg:mt-[50px]'>
         <input type='file' accept='image/*' onChange={handleImageChange} ref={filePickerRef} hidden />
         <div className=" relative w-32 h-32 self-center cursor-pointer shadow-md overflow-hidden rounded-full" onClick={() => filePickerRef.current.click()}>
           {imageFileUploadProgress && (

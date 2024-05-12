@@ -57,7 +57,7 @@ export default function Header() {
 
   return (
     <Wrapper>
-      <Navbar className='navbar border-b-[1px] border-gray-900  bg-[#1a1f25] dark:bg-[#1a1f25] '>
+      <Navbar className='navbar flex flex-row border-b-[2px] border-gray-100  bg-[#1a1f25] dark:bg-[#1a1f25] '>
         <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
           <span className='px-2 py-1 bg-gradient-to-r from-indigo-400 via-slate-400-500 to-pink-500 rounded-lg text-red-300'>Kaydi's</span> 
           <span className='ml-[5px] text-[#778595]'>Stories</span>
@@ -78,7 +78,7 @@ export default function Header() {
           </Button>
         </Link>
         <div className='flex gap-2 md:order-2'>
-          <Button className='w-12 h-10  hidden sm:inline bg-transparent border-gray-600 dark:border-gray-600 hover:bg-slate-900' color="gray" pill onClick={() => dispatch(toggleTheme())}>
+          <Button className='w-12 h-10 bg-transparent border-gray-600 dark:border-gray-600 hover:bg-slate-900' color="gray" pill onClick={() => dispatch(toggleTheme())}>
             {theme === 'light' ? (<IoMoonOutline className='text-white w-[30px]'/>) : (<FaSun />)}
           </Button>
           {
@@ -143,4 +143,12 @@ const Wrapper = styled.section`
     padding-left: 150px;
     padding-right: 150px;
   }
+
+  @media screen and (max-width: 992px) {
+    .navbar {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
 `

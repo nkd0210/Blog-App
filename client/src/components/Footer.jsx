@@ -5,52 +5,52 @@ import { BsFacebook, BsInstagram, BsTwitter, BsDiscord} from 'react-icons/bs'
 
 export default function FooterCom() {
     return (
-        <Footer container className='border border-gray-900 bg-woodDark bg-cover'>
+        <Footer container className='border border-gray-400 bg-white dark:bg-[#182029]'>
             <div className="w-full max-w-7xl mx-auto">
                 <div className="grid w-full justify-between sm:flex md:grid-cols-1 ">
                     <div className="mt-5">
                         <Link to="/" className='self-center whitespace-nowrap text-lg sm:text-xl font-semibold dark:text-white'>
                             <span className='px-2 py-1 bg-gradient-to-r from-indigo-400 via-slate-400-500 to-pink-500 rounded-lg text-white'>Kaydi's</span>
-                            <span className='text-cyan-200 dark:text-indigo-400'> Stories</span>
+                            <span className='text-gray-400 dark:text-gray-400'> Stories</span>
                         </Link>
                     </div>
                     <div className="grid grid-cols-2 gap-3 mt-4 sm:grid-cols-3 sm:gap-6 ">
                         <div>
-                            <Footer.Title title='about' className='text-white' />
+                            <Footer.Title title='about' className='text-black dark:text-white' />
                             <Footer.LinkGroup col>
                             <Footer.Link href="https://comfy-cloth.onrender.com/" target='_blank' rel='noopener noreferrer'>
-                                <span className='border-none hover:border-none cursor-pointer text-white hover:text-gray-400'>
+                                <span className='border-none hover:border-none cursor-pointer text-black dark:text-white  hover:text-gray-400'>
                                     Cozy and comfy
                                 </span>
                             </Footer.Link>
                             <Footer.Link href="/about" target='_blank' rel='noopener noreferrer'>
-                                <span className='border-none hover:border-none cursor-pointer text-white hover:text-gray-400'>
+                                <span className='border-none hover:border-none cursor-pointer text-black dark:text-white hover:text-gray-400'>
                                     Kaydi's Stories
                                 </span>
                             </Footer.Link>
                             </Footer.LinkGroup>
                         </div>
                         <div>
-                            <Footer.Title title='Follow us' className='text-white' />
+                            <Footer.Title title='Follow us' className='text-black dark:text-white' />
                             <Footer.LinkGroup col>
                             <Footer.Link href="https://github.com/nkd0210" target='_blank' rel='noopener noreferrer'>
-                                <span className='border-none hover:border-none cursor-pointer text-white hover:text-gray-400'>Github</span>
+                                <span className='border-none hover:border-none cursor-pointer text-black dark:text-white hover:text-gray-400'>Github</span>
                             </Footer.Link>
                             <Footer.Link href="#">
-                                <span className='border-none hover:border-none cursor-pointer text-white hover:text-gray-400'>Facebook</span>
+                                <span className='border-none hover:border-none cursor-pointer text-black dark:text-white hover:text-gray-400'>Facebook</span>
                             </Footer.Link>
                             </Footer.LinkGroup>
                         </div>
                         <div>
-                            <Footer.Title title='Legal' className='text-white'/>
+                            <Footer.Title title='Legal' className='text-black dark:text-white'/>
                             <Footer.LinkGroup col>
                             <Footer.Link href="#">
-                                <span className='border-none hover:border-none cursor-pointer text-white hover:text-gray-400'>
+                                <span className='border-none hover:border-none cursor-pointer text-black dark:text-white hover:text-gray-400'>
                                     Privacy Policy
                                 </span>
                             </Footer.Link>
                             <Footer.Link href="#">
-                                <span className='border-none hover:border-none cursor-pointer text-white hover:text-gray-400'>
+                                <span className='border-none hover:border-none cursor-pointer text-black dark:text-white hover:text-gray-400'>
                                     Terms & Conditions
                                 </span>
                             </Footer.Link>

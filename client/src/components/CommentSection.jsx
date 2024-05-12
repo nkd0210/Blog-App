@@ -116,7 +116,7 @@ export default function CommentSection({ postId, postTitle }) {
     }
 
     return (
-        <div className="max-w-2xl max-h-[800px] overflow-y-auto  mx-auto w-full p-3 border mt-[20px] rounded-[20px] border-gray-400 shadow-gray-500/50 dark:border-indigo-400 shadow-lg dark:shadow-indigo-500/90">
+        <div className="max-w-full max-h-[800px] overflow-y-auto  mx-auto w-full p-3 border mt-[20px] rounded-[10px] border-gray-400 ">
             {currentUser ? (
                 <div className="flex items-center gap-1 my-5 dark:text-indigo-400 text-[16px]">
                     <p className="pr-[10px]">Signed in as :</p>

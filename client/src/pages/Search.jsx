@@ -105,12 +105,12 @@ export default function Search() {
     }
 
     return (
-        <div className='flex flex-col md:flex-col'>
+        <div className=' md:mx-[20px] lg:mx-[150px] flex flex-col md:flex-col gap-[30px]'>
             {/* SEARCH BAR */}
-            <div className='p-7 border-b md:border-r bg-navbarWood bg-contain max-w-[1300px] mx-auto my-[20px] rounded-[20px] shadow-lg border-gray-400 shadow-gray-500/90 dark:border-indigo-400 dark:shadow-indigo-500/90  '>
+            <div className='p-7 border-b md:border-r mt-[20px] w-full md:max-w-[500px] lg:max-w-[1300px] mx-auto md:my-[50px] rounded-[10px] border border-gray-300  dark:border-indigo-400 bg-gray-100 dark:bg-[#11181f] shadow-lg shadow-gray-500/90 dark:shadow-lg dark:shadow-indigo-500/90'>
                 <form className='flex flex-col lg:flex-row gap-8 mx-auto'>
                     <div className='flex items-center gap-2 w-full'>
-                        <label className='whitespace-nowrap font-semibold text-gray-300'>
+                        <label className='whitespace-nowrap font-semibold text-black dark:text-white'>
                             Search Term:
                         </label>
                         <TextInput
@@ -123,14 +123,14 @@ export default function Search() {
                         />
                     </div>
                     <div className='flex items-center gap-2 w-full'>
-                        <label className='font-semibold text-gray-300 '>Sort:</label>
+                        <label className='font-semibold text-black dark:text-white'>Sort:</label>
                         <Select className='w-full' onChange={handleChange} value={sidebarData.sort} id='sort'>
                             <option value='desc'>Newest</option>
                             <option value='asc'>Oldest</option>
                         </Select>
                     </div>
                     <div className='flex items-center gap-2'>
-                        <label className='font-semibold text-gray-300'>Category:</label>
+                        <label className='font-semibold text-black dark:text-white'>Category:</label>
                         <Select
                             onChange={handleChange}
                             value={sidebarData.category}
@@ -154,9 +154,9 @@ export default function Search() {
             </div>
 
             {/* DISPLAY */}
-            <div className="w-full flex flex-col  ">
-                <h1 className='text-3xl text-center font-semibold border text-gray-600 dark:text-indigo-300 border-gray-400 dark:border-indigo-500 p-5 mx-[20px] sm:mx-[40px] rounded-t-[50px] shadow-lg  dark:shadow-lg dark:shadow-indigo-500/90 dark:bg-sky bg-cover'>Posts Results</h1>
-                <div className='flex flex-wrap justify-center align-items-center  gap-[30px] sm:gap-[50px] border mx-[20px] sm:mx-[40px] p-[30px] sm:p-[20px] rounded-b-[20px] border-gray-400 dark:border-indigo-400 shadow-lg shadow-gray-500/50 dark:shadow-indigo-500/90 bg-gray-100 dark:bg-[#11181f] '>
+            <div className="w-full flex flex-col ">
+                <h1 className='text-3xl uppercase text-center font-semibold border text-gray-600 dark:text-blue-400 border-gray-400 dark:border-indigo-500 p-5 rounded-t-[20px] shadow-lg  dark:shadow-lg dark:shadow-indigo-500/90 dark:bg-sky bg-cover'>Posts Results</h1>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-[20px] sm:gap-[30px] border p-[20px] rounded-[10px] border-gray-300 dark:border-indigo-400 bg-gray-100 dark:bg-[#11181f] shadow-lg shadow-gray-500/90 dark:shadow-lg dark:shadow-indigo-500/90'>
                     {!loading && posts.length === 0 && (
                         <p className='text-xl text-gray-500'>No posts found.</p>
                     )}
@@ -167,7 +167,7 @@ export default function Search() {
                     {showMore && (
                         <button
                             onClick={handleShowMore}
-                            className='text-white text-[16px] px-[5px] font-semibold dark:text-white hover:no-underline max-w-[200px] rounded-[10px] mx-auto bg-indigo-400  text-center p-[5px] hover:text-indigo-600 hover:font-bold hover:scale-x-105 tranform transition-transform'
+                            className='md:col-start-1 md:col-end-4 text-[16px] px-[5px] font-semibold text-white hover:no-underline max-w-[250px] rounded-[10px] mx-auto bg-indigo-400  text-center p-[5px]  dark:hover:text-indigo-600 hover:font-bold hover:scale-x-105 tranform transition-transform'
                         >
                             Show More
                         </button>
